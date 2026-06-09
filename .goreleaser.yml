@@ -23,7 +23,6 @@ builds:
         goarch: arm64
     flags:
       - -trimpath
-      - -pgo=auto
     ldflags:
       - -s
       - -w

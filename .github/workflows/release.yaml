@@ -7,34 +7,31 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  pgo:
-    name: "Generate PGO"
-    uses: ./.github/workflows/generate-pgo.yaml
-
   release:
     name: "Release"
-    needs: ["pgo"]
-    runs-on: ubuntu-latest-16-cores
-    steps: 
-      - uses: actions/checkout@v6
-        with: 
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
           fetch-depth: 0
-      - uses: actions/download-artifact@v8
+
+      - uses: actions/setup-go@v5
         with:
-          name: "pgo"
-          path: "cmd/vulnsight/"
-      - uses: projectdiscovery/actions/setup/go@v1
-        with:
-          go-version: "stable"
-      - uses: docker/login-action@v4 
+          go-version: stable
+
+      - uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
-      - uses: projectdiscovery/actions/goreleaser@v1
-        with: 
-          release: true
-        env: 
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          SLACK_WEBHOOK: "${{ secrets.RELEASE_SLACK_WEBHOOK }}"
-          DISCORD_WEBHOOK_ID: "${{ secrets.DISCORD_WEBHOOK_ID }}"
-          DISCORD_WEBHOOK_TOKEN: "${{ secrets.DISCORD_WEBHOOK_TOKEN }}"
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: goreleaser/goreleaser-action@v6
+        with:
+          distribution: goreleaser
+          version: latest
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
