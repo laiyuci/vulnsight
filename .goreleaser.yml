@@ -1,0 +1,125 @@
+version: 2
+
+before:
+  hooks:
+    - go mod download
+    - go mod verify
+
+builds:
+  - main: cmd/vulnsight/main.go
+    binary: vulnsight
+    id: vulnsight-cli
+    env:
+      - CGO_ENABLED=0
+      - GOEXPERIMENT=greenteagc
+    goos: [windows, linux, darwin]
+    goarch: [amd64, '386', arm, arm64]
+    ignore:
+      - goos: darwin
+        goarch: '386'
+      - goos: windows
+        goarch: arm
+      - goos: windows
+        goarch: arm64
+    flags:
+      - -trimpath
+      - -pgo=auto
+    ldflags:
+      - -s
+      - -w
+
+#- main: cmd/tmc/main.go
+#  binary: tmc
+#  id: annotate
+#
+#  env:
+#  - CGO_ENABLED=0
+#
+#  goos: [linux]
+#  goarch: [amd64]
+
+archives:
+  - formats: [zip]
+    id: vulnsight
+    ids: [vulnsight-cli]
+    name_template: '{{ .ProjectName }}_{{ .Version }}_{{ if eq .Os "darwin" }}macOS{{ else }}{{ .Os }}{{ end }}_{{ .Arch }}'
+
+checksum:
+  algorithm: sha256
+
+dockers:
+  - image_templates:
+      - "你的Docker帳號/{{ .ProjectName }}:{{ .Tag }}-amd64"
+      - "你的Docker帳號/{{ .ProjectName }}:v{{ .Major }}.{{ .Minor }}-amd64"
+      - "你的Docker帳號/{{ .ProjectName }}:v{{ .Major }}-amd64"
+      - "你的Docker帳號/{{ .ProjectName }}:latest-amd64"
+    dockerfile: Dockerfile.goreleaser
+    use: buildx
+    build_flag_templates:
+      - "--pull"
+      - "--platform=linux/amd64"
+      - "--label=org.opencontainers.image.created={{ .Date }}"
+      - "--label=org.opencontainers.image.ref.name={{ .Tag }}"
+      - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
+      - "--label=org.opencontainers.image.version={{ .Version }}"
+    goarch: amd64
+  - image_templates:
+      - "你的Docker帳號/{{ .ProjectName }}:{{ .Tag }}-arm64"
+      - "你的Docker帳號/{{ .ProjectName }}:v{{ .Major }}.{{ .Minor }}-arm64"
+      - "你的Docker帳號/{{ .ProjectName }}:v{{ .Major }}-arm64"
+      - "你的Docker帳號/{{ .ProjectName }}:latest-arm64"
+    dockerfile: Dockerfile.goreleaser
+    use: buildx
+    build_flag_templates:
+      - "--pull"
+      - "--platform=linux/arm64"
+      - "--label=org.opencontainers.image.created={{ .Date }}"
+      - "--label=org.opencontainers.image.ref.name={{ .Tag }}"
+      - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
+      - "--label=org.opencontainers.image.version={{ .Version }}"
+    goarch: arm64
+  # # NOTE(dwisiswant0): chromium doesn't support 32-bit on alpine
+  # - image_templates:
+  #     - "你的Docker帳號/{{ .ProjectName }}:{{ .Tag }}-386"
+  #     - "你的Docker帳號/{{ .ProjectName }}:v{{ .Major }}.{{ .Minor }}-386"
+  #     - "你的Docker帳號/{{ .ProjectName }}:v{{ .Major }}-386"
+  #     - "你的Docker帳號/{{ .ProjectName }}:latest-386"
+  #   dockerfile: Dockerfile.goreleaser
+  #   use: buildx
+  #   build_flag_templates:
+  #     - "--pull"
+  #     - "--platform=linux/386"
+  #     - "--label=org.opencontainers.image.created={{ .Date }}"
+  #     - "--label=org.opencontainers.image.ref.name={{ .Tag }}"
+  #     - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
+  #     - "--label=org.opencontainers.image.version={{ .Version }}"
+  #   goarch: "386"
+
+docker_manifests:
+  - name_template: "你的Docker帳號/{{ .ProjectName }}:{{ .Tag }}"
+    image_templates:
+      - "你的Docker帳號/{{ .ProjectName }}:{{ .Tag }}-amd64"
+      - "你的Docker帳號/{{ .ProjectName }}:{{ .Tag }}-arm64"
+  - name_template: "你的Docker帳號/{{ .ProjectName }}:v{{ .Major }}.{{ .Minor }}"
+    image_templates:
+      - "你的Docker帳號/{{ .ProjectName }}:v{{ .Major }}.{{ .Minor }}-amd64"
+      - "你的Docker帳號/{{ .ProjectName }}:v{{ .Major }}.{{ .Minor }}-arm64"
+  - name_template: "你的Docker帳號/{{ .ProjectName }}:v{{ .Major }}"
+    image_templates:
+      - "你的Docker帳號/{{ .ProjectName }}:v{{ .Major }}-amd64"
+      - "你的Docker帳號/{{ .ProjectName }}:v{{ .Major }}-arm64"
+  - name_template: "你的Docker帳號/{{ .ProjectName }}:latest"
+    image_templates:
+      - "你的Docker帳號/{{ .ProjectName }}:latest-amd64"
+      - "你的Docker帳號/{{ .ProjectName }}:latest-arm64"
+
+announce:
+  slack:
+    enabled: true
+    channel: '#release'
+    username: GoReleaser
+    message_template: 'New Release: {{ .ProjectName }} {{.Tag}} is published! Check it out at {{ .ReleaseURL }}'
+
+  discord:
+    enabled: true
+    message_template: '**New Release: {{ .ProjectName }} {{.Tag}}** is published! Check it out at {{ .ReleaseURL }}'
