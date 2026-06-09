@@ -96,19 +96,19 @@ dockers:
   #   goarch: "386"
 
 docker_manifests:
-  - name_template: "你的Docker帳號/{{ .ProjectName }}:{{ .Tag }}"
+  - name_template: "laiyuci7/{{ .ProjectName }}:{{ .Tag }}"
     image_templates:
       - "laiyuci7/{{ .ProjectName }}:{{ .Tag }}-amd64"
       - "laiyuci7/{{ .ProjectName }}:{{ .Tag }}-arm64"
-  - name_template: "你的Docker帳號/{{ .ProjectName }}:v{{ .Major }}.{{ .Minor }}"
+  - name_template: "laiyuci7/{{ .ProjectName }}:v{{ .Major }}.{{ .Minor }}"
     image_templates:
       - "laiyuci7/{{ .ProjectName }}:v{{ .Major }}.{{ .Minor }}-amd64"
       - "laiyuci7/{{ .ProjectName }}:v{{ .Major }}.{{ .Minor }}-arm64"
-  - name_template: "你的Docker帳號/{{ .ProjectName }}:v{{ .Major }}"
+  - name_template: "laiyuci7/{{ .ProjectName }}:v{{ .Major }}"
     image_templates:
       - "laiyuci7/{{ .ProjectName }}:v{{ .Major }}-amd64"
       - "laiyuci7/{{ .ProjectName }}:v{{ .Major }}-arm64"
-  - name_template: "你的Docker帳號/{{ .ProjectName }}:latest"
+  - name_template: "laiyuci7/{{ .ProjectName }}:latest"
     image_templates:
       - "laiyuci7/{{ .ProjectName }}:latest-amd64"
       - "laiyuci7/{{ .ProjectName }}:latest-arm64"
