@@ -4,12 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Nuclei is a modern, high-performance vulnerability scanner built in Go that leverages YAML-based templates for customizable vulnerability detection. It supports multiple protocols (HTTP, DNS, TCP, SSL, WebSocket, WHOIS, JavaScript, Code) and is designed for zero false positives through real-world condition simulation.
+Vulnsight is a modern, high-performance vulnerability scanner built in Go that leverages YAML-based templates for customizable vulnerability detection. It supports multiple protocols (HTTP, DNS, TCP, SSL, WebSocket, WHOIS, JavaScript, Code) and is designed for zero false positives through real-world condition simulation.
 
 ## Development Commands
 
 ### Building and Testing
-- `make build` - Build the main nuclei binary to ./bin/nuclei
+- `make build` - Build the main vulnsight binary to ./bin/vulnsight
 - `make test` - Run unit tests with race detection
 - `make integration` - Run the native integration suite via `go test -tags=integration ./internal/tests/integration`
 - `make functional` - CI-only functional suite entry point
@@ -34,7 +34,7 @@ Nuclei is a modern, high-performance vulnerability scanner built in Go that leve
 ## Architecture Overview
 
 ### Core Components
-- **cmd/nuclei** - Main CLI entry point with flag parsing and configuration
+- **cmd/vulnsight** - Main CLI entry point with flag parsing and configuration
 - **internal/runner** - Core runner that orchestrates the entire scanning process
 - **pkg/core** - Execution engine with work pools and template clustering
 - **pkg/templates** - Template parsing, compilation, and management
@@ -68,7 +68,7 @@ Each protocol (HTTP, DNS, Network, etc.) implements:
 - Development tools for binding generation in pkg/js/devtools/
 
 ## Template Development
-- Templates located in separate nuclei-templates repository
+- Templates located in the nuclei-templates repository
 - YAML format with info, requests, and operators sections  
 - Support for multiple protocol types in single template
 - Built-in DSL functions for dynamic content generation

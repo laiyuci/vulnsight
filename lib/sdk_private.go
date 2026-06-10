@@ -198,7 +198,7 @@ func (e *NucleiEngine) init(ctx context.Context) error {
 	}
 
 	if e.tmpDir == "" {
-		tmpDir, err := os.MkdirTemp("", "nuclei-tmp-*")
+		tmpDir, err := os.MkdirTemp("", "vulnsight-tmp-*")
 		if err != nil {
 			return err
 		}

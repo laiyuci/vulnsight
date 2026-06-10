@@ -562,7 +562,7 @@ func WithOptions(opts *pkgtypes.Options) NucleiSDKOptions {
 // The parent directory is assumed to exist.
 func WithTemporaryDirectory(parentDir string) NucleiSDKOptions {
 	return func(e *NucleiEngine) error {
-		tmpDir, err := os.MkdirTemp(parentDir, "nuclei-tmp-*")
+		tmpDir, err := os.MkdirTemp(parentDir, "vulnsight-tmp-*")
 		if err != nil {
 			return err
 		}

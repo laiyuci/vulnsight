@@ -40,7 +40,7 @@ func (r *Runner) verboseTemplate(tpl *templates.Template) {
 
 func (r *Runner) listAvailableStoreTemplates(store *loader.Store) {
 	r.Logger.Print().Msgf(
-		"\nListing available %v nuclei templates for %v",
+		"\nListing available %v vulnsight templates for %v",
 		config.DefaultConfig.TemplateVersion,
 		config.DefaultConfig.TemplatesDirectory,
 	)
@@ -80,7 +80,7 @@ func (r *Runner) listAvailableStoreTemplates(store *loader.Store) {
 
 func (r *Runner) listAvailableTags(tagsMap map[string]int) {
 	r.Logger.Print().Msgf(
-		"\nListing available %v nuclei tags for %v",
+		"\nListing available %v vulnsight tags for %v",
 		config.DefaultConfig.TemplateVersion,
 		config.DefaultConfig.TemplatesDirectory,
 	)

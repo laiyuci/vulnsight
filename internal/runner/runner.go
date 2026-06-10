@@ -124,7 +124,7 @@ func New(options *types.Options) (*Runner, error) {
 	if config.DefaultConfig.CanCheckForUpdates() {
 		if err := installer.NucleiVersionCheck(); err != nil {
 			if options.Verbose || options.Debug {
-				runner.Logger.Error().Msgf("nuclei version check failed got: %s\n", err)
+				runner.Logger.Error().Msgf("vulnsight version check failed got: %s\n", err)
 			}
 		}
 
@@ -141,15 +141,15 @@ func New(options *types.Options) (*Runner, error) {
 			DisablePublicTemplates: options.PublicTemplateDisableDownload,
 		}
 		if err := tm.FreshInstallIfNotExists(); err != nil {
-			runner.Logger.Warning().Msgf("failed to install nuclei templates: %s\n", err)
+			runner.Logger.Warning().Msgf("failed to install vulnsight templates: %s\n", err)
 		}
 		if err := tm.UpdateIfOutdated(); err != nil {
-			runner.Logger.Warning().Msgf("failed to update nuclei templates: %s\n", err)
+			runner.Logger.Warning().Msgf("failed to update vulnsight templates: %s\n", err)
 		}
 
 		if config.DefaultConfig.NeedsIgnoreFileUpdate() {
 			if err := installer.UpdateIgnoreFile(); err != nil {
-				runner.Logger.Warning().Msgf("failed to update nuclei ignore file: %s\n", err)
+				runner.Logger.Warning().Msgf("failed to update vulnsight ignore file: %s\n", err)
 			}
 		}
 
@@ -157,7 +157,7 @@ func New(options *types.Options) (*Runner, error) {
 			// we automatically check for updates unless explicitly disabled
 			// this print statement is only to inform the user that there are no updates
 			if !config.DefaultConfig.NeedsTemplateUpdate() {
-				runner.Logger.Info().Msgf("No new updates found for nuclei templates")
+				runner.Logger.Info().Msgf("No new updates found for vulnsight templates")
 			}
 			// manually trigger update of custom templates
 			if ctm != nil {
@@ -249,7 +249,7 @@ func New(options *types.Options) (*Runner, error) {
 		os.Exit(0)
 	}
 
-	tmpDir, err := os.MkdirTemp("", "nuclei-tmp-*")
+	tmpDir, err := os.MkdirTemp("", "vulnsight-tmp-*")
 	if err != nil {
 		return nil, errors.Wrap(err, "could not create temporary directory")
 	}
@@ -728,7 +728,7 @@ func (r *Runner) RunEnumeration() error {
 	// config.json - containing below info
 	// events.jsonl - containing all start and end times of all templates
 	events.InitWithConfig(&events.ScanConfig{
-		Name:                "nuclei-stats", // make this configurable
+		Name:                "vulnsight-stats", // make this configurable
 		TargetCount:         int(r.inputProvider.Count()),
 		TemplatesCount:      len(store.Templates()) + len(store.Workflows()),
 		TemplateConcurrency: r.options.TemplateThreads,

@@ -83,7 +83,7 @@ func ParseOptions(options *types.Options) {
 	defaultProfilesPath := filepath.Join(config.DefaultConfig.GetTemplateDir(), "profiles")
 	if options.ListTemplateProfiles {
 		options.Logger.Print().Msgf(
-			"Listing available %v nuclei template profiles for %v",
+			"Listing available %v vulnsight template profiles for %v",
 			config.DefaultConfig.TemplateVersion,
 			config.DefaultConfig.TemplatesDirectory,
 		)

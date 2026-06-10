@@ -32,7 +32,7 @@ type RunnerOption func(*Runner)
 
 func NewRunner(options ...RunnerOption) *Runner {
 	runner := &Runner{
-		BinaryPath:                 "nuclei",
+		BinaryPath:                 "vulnsight",
 		BaseEnv:                    []string{"DISABLE_CLOUD_UPLOAD_WRN=true", "DISABLE_CLOUD_UPLOAD=true"},
 		DisableAutoUpdate:          true,
 		AllowLocalFileAccess:       true,
@@ -113,7 +113,7 @@ func (r *Runner) command(binaryPath string, args ...string) *exec.Cmd {
 	}
 
 	if resolvedBinary == "" {
-		resolvedBinary = "nuclei"
+		resolvedBinary = "vulnsight"
 	}
 
 	cmd := exec.Command(resolvedBinary, args...)
