@@ -18,7 +18,7 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: laiyuci7
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build and push
@@ -29,5 +29,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/vulnsight:${{ github.ref_name }}
-            ${{ secrets.DOCKER_USERNAME }}/vulnsight:latest
+            laiyuci7/vulnsight:${{ github.ref_name }}
+            laiyuci7/vulnsight:latest
