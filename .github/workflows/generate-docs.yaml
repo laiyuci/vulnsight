@@ -10,6 +10,8 @@ jobs:
   publish-docs:
     if: ${{ !endsWith(github.actor, '[bot]') }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v7
       - uses: projectdiscovery/actions/setup/go@v1
@@ -22,6 +24,6 @@ jobs:
         with:
           files: |
             SYNTAX-REFERENCE.md
-            nuclei-jsonschema.json
+            vulnsight-jsonschema.json
           message: 'docs: update syntax & JSON schema 🤖'
       - run: git push origin $GITHUB_REF
