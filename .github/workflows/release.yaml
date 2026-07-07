@@ -1,9 +1,10 @@
 name: 🎉 Release
 
 on:
-  push:
-    tags:
-      - '*'
+  # NOTE: projectdiscovery's goreleaser release pipeline requires a 16-core runner
+  # and pushes to the projectdiscovery/ Docker namespace, so it does not run on this
+  # fork. Docker images are published by docker-release.yaml instead. Kept for manual
+  # dispatch only.
   workflow_dispatch: {}
 
 jobs:
