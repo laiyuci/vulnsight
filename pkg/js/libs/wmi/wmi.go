@@ -2,8 +2,8 @@ package wmi
 
 import (
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/libs/goexec"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/utils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/goexec"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/utils"
 )
 
 // Auth exposes WMI authentication constructors.

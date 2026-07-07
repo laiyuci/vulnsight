@@ -5,10 +5,10 @@ import (
 	"time"
 
 	"github.com/projectdiscovery/govaluate"
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators/common/dsl"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/yaml"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators/common/dsl"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/yaml"
 	"github.com/stretchr/testify/require"
 )
 

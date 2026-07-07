@@ -4,7 +4,7 @@ import (
 	"context"
 	"os"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolstate"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolstate"
 )
 
 // ListDir lists itemType values within a directory

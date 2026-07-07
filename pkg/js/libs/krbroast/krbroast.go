@@ -17,9 +17,9 @@ import (
 	gpkrb "github.com/Mzack9999/goimpacket/pkg/kerberos"
 	"github.com/projectdiscovery/goja"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/libs/dcerpc"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/utils"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolstate"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/dcerpc"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/utils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolstate"
 )
 
 // ASRepRoastRequest configures an AS-REP roast attempt.

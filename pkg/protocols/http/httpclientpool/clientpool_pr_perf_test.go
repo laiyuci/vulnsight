@@ -13,8 +13,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolstate"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolstate"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
 )
 
 // Benchmarks measuring the end-to-end effect of per-host pooling delivered by

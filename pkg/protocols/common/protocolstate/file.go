@@ -1,9 +1,9 @@
 package protocolstate
 
 import (
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/config"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
-	filepathutil "github.com/projectdiscovery/nuclei/v3/pkg/utils/filepath"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/config"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
+	filepathutil "github.com/projectdiscovery/vulnsight/v3/pkg/utils/filepath"
 	"github.com/projectdiscovery/utils/errkit"
 	fileutil "github.com/projectdiscovery/utils/file"
 	mapsutil "github.com/projectdiscovery/utils/maps"

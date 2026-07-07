@@ -113,7 +113,7 @@ Nuclei 전체 [**`문서를 여기에서`**](https://docs.projectdiscovery.io/to
 `nuclei` 설치에는 **go >= 1.24.2** 가 필요합니다. 다음 명령어를 실행하여 저장소를 가져옵니다:
 
 ```sh
-go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+go install -v github.com/projectdiscovery/vulnsight/v3/cmd/vulnsight@latest
 ```
 
 nuclei 설치에 관한 자세한 내용은 `https://docs.projectdiscovery.io/tools/nuclei/install` 를 참조하세요.

@@ -19,9 +19,9 @@ import (
 	"time"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/projectdiscovery/nuclei/v3/internal/tests/testutils"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/yaml"
+	"github.com/projectdiscovery/vulnsight/v3/internal/tests/testutils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/yaml"
 	"github.com/projectdiscovery/retryablehttp-go"
 	"github.com/projectdiscovery/utils/errkit"
 	logutil "github.com/projectdiscovery/utils/log"

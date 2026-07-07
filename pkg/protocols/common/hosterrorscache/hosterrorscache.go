@@ -11,9 +11,9 @@ import (
 
 	"github.com/projectdiscovery/gcache"
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/config"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/contextargs"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types/nucleierr"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/config"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/contextargs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types/nucleierr"
 	"github.com/projectdiscovery/utils/errkit"
 	stringsutil "github.com/projectdiscovery/utils/strings"
 )

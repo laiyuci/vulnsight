@@ -1,10 +1,10 @@
 package postgres
 
 import (
-	lib_postgres "github.com/projectdiscovery/nuclei/v3/pkg/js/libs/postgres"
+	lib_postgres "github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/postgres"
 
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/gojs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/gojs"
 )
 
 var (

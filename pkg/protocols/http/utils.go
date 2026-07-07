@@ -5,7 +5,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/generators"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/generators"
 	"github.com/projectdiscovery/rawhttp"
 	"github.com/projectdiscovery/utils/errkit"
 )

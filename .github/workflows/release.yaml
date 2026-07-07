@@ -22,7 +22,7 @@ jobs:
       - uses: actions/download-artifact@v8
         with:
           name: "pgo"
-          path: "cmd/nuclei/"
+          path: "cmd/vulnsight/"
       - uses: projectdiscovery/actions/setup/go@v1
         with:
           go-version: "stable"

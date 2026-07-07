@@ -6,10 +6,10 @@ import (
 
 	gitlab "gitlab.com/gitlab-org/api/client-go"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/output"
-	"github.com/projectdiscovery/nuclei/v3/pkg/reporting/exporters/markdown/util"
-	"github.com/projectdiscovery/nuclei/v3/pkg/reporting/format"
-	"github.com/projectdiscovery/nuclei/v3/pkg/reporting/trackers/filters"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/output"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/reporting/exporters/markdown/util"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/reporting/format"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/reporting/trackers/filters"
 	"github.com/projectdiscovery/retryablehttp-go"
 )
 

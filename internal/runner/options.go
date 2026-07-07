@@ -18,19 +18,19 @@ import (
 	"github.com/projectdiscovery/gologger"
 	"github.com/projectdiscovery/gologger/formatter"
 	"github.com/projectdiscovery/gologger/levels"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/config"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolinit"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/utils/vardump"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/headless/engine"
-	"github.com/projectdiscovery/nuclei/v3/pkg/reporting"
-	"github.com/projectdiscovery/nuclei/v3/pkg/reporting/exporters/jsonexporter"
-	"github.com/projectdiscovery/nuclei/v3/pkg/reporting/exporters/jsonl"
-	"github.com/projectdiscovery/nuclei/v3/pkg/reporting/exporters/markdown"
-	"github.com/projectdiscovery/nuclei/v3/pkg/reporting/exporters/pdf"
-	"github.com/projectdiscovery/nuclei/v3/pkg/reporting/exporters/sarif"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates/extensions"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/yaml"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/config"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolinit"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/utils/vardump"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/headless/engine"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/reporting"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/reporting/exporters/jsonexporter"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/reporting/exporters/jsonl"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/reporting/exporters/markdown"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/reporting/exporters/pdf"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/reporting/exporters/sarif"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates/extensions"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/yaml"
 	fileutil "github.com/projectdiscovery/utils/file"
 	"github.com/projectdiscovery/utils/generic"
 	stringsutil "github.com/projectdiscovery/utils/strings"
@@ -84,7 +84,7 @@ func ParseOptions(options *types.Options) {
 	defaultProfilesPath := filepath.Join(config.DefaultConfig.GetTemplateDir(), "profiles")
 	if options.ListTemplateProfiles {
 		options.Logger.Print().Msgf(
-			"Listing available %v nuclei template profiles for %v",
+			"Listing available %v vulnsight template profiles for %v",
 			config.DefaultConfig.TemplateVersion,
 			config.DefaultConfig.TemplatesDirectory,
 		)

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/expressions"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/marker"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/expressions"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/marker"
 )
 
 // Values contains render values. Values are inserted as data; they are not

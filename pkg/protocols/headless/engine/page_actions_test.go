@@ -20,11 +20,11 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/projectdiscovery/nuclei/v3/internal/tests/testheadless"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/contextargs"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/interactsh"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolstate"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/internal/tests/testheadless"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/contextargs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/interactsh"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolstate"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
 	envutil "github.com/projectdiscovery/utils/env"
 	stringsutil "github.com/projectdiscovery/utils/strings"
 )

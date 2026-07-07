@@ -4,10 +4,10 @@ import (
 	"fmt"
 
 	"github.com/pkg/errors"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/config"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/disk"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/config"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/disk"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
 	sliceutil "github.com/projectdiscovery/utils/slice"
 )
 

@@ -28,8 +28,8 @@ import (
 	gpsmbexec "github.com/Mzack9999/goimpacket/pkg/smbexec"
 	"github.com/projectdiscovery/goja"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/utils"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolstate"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/utils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolstate"
 )
 
 // Endpoint is a flat representation of an entry returned by the EPMAPPER.

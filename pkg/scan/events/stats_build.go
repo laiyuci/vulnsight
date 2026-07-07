@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
 )
 
 var _ ScanEventWorker = &ScanStatsWorker{}

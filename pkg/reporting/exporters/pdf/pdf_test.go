@@ -7,10 +7,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/model"
-	"github.com/projectdiscovery/nuclei/v3/pkg/model/types/severity"
-	"github.com/projectdiscovery/nuclei/v3/pkg/model/types/stringslice"
-	"github.com/projectdiscovery/nuclei/v3/pkg/output"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model/types/severity"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model/types/stringslice"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/output"
 	"github.com/stretchr/testify/require"
 )
 

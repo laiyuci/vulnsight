@@ -7,7 +7,7 @@ import (
 	yttcmd "carvel.dev/ytt/pkg/cmd/template"
 	yttui "carvel.dev/ytt/pkg/cmd/ui"
 	yttfiles "carvel.dev/ytt/pkg/files"
-	yamlutil "github.com/projectdiscovery/nuclei/v3/pkg/utils/yaml"
+	yamlutil "github.com/projectdiscovery/vulnsight/v3/pkg/utils/yaml"
 )
 
 func ytt(tpl, dvs []string, varFiles []string) ([]byte, error) {

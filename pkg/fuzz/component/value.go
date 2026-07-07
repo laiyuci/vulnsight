@@ -7,7 +7,7 @@ import (
 	"github.com/leslie-qiwa/flat"
 	"github.com/logrusorgru/aurora/v4"
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/pkg/fuzz/dataformat"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/fuzz/dataformat"
 )
 
 // Value is a value component containing a single

@@ -113,7 +113,7 @@ Telusuri [**`dokumentasi Nuclei lengkap di sini`**](https://docs.projectdiscover
 `nuclei` memerlukan **go >= 1.24.2** agar dapat diinstal dengan sukses. Jalankan perintah berikut untuk mengambil repo:
 
 ```sh
-go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+go install -v github.com/projectdiscovery/vulnsight/v3/cmd/vulnsight@latest
 ```
 
 Untuk informasi lebih lanjut tentang menginstal nuclei, lihat `https://docs.projectdiscovery.io/tools/nuclei/install`.

@@ -2,7 +2,7 @@ package output
 
 import (
 	"github.com/logrusorgru/aurora/v4"
-	"github.com/projectdiscovery/nuclei/v3/pkg/output/stats"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/output/stats"
 )
 
 // StatsOutputWriter implements writer interface for stats observation

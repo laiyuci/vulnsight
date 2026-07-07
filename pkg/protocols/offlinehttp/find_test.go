@@ -7,10 +7,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/model"
-	"github.com/projectdiscovery/nuclei/v3/pkg/model/types/severity"
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators"
-	"github.com/projectdiscovery/nuclei/v3/internal/tests/testutils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model/types/severity"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators"
+	"github.com/projectdiscovery/vulnsight/v3/internal/tests/testutils"
 	permissionutil "github.com/projectdiscovery/utils/permission"
 )
 

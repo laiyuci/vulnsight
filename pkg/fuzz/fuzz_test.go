@@ -4,10 +4,10 @@ import (
 	"testing"
 
 	"github.com/projectdiscovery/goflags"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/variables"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/variables"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils"
 	"github.com/stretchr/testify/require"
 )
 

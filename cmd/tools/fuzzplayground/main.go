@@ -5,7 +5,7 @@ import (
 
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/internal/fuzzplayground"
+	"github.com/projectdiscovery/vulnsight/v3/internal/fuzzplayground"
 )
 
 var (

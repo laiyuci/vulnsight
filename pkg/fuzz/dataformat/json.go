@@ -3,7 +3,7 @@ package dataformat
 import (
 	"strings"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
 )
 
 // JSON is a JSON encoder

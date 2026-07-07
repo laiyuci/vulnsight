@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/projectdiscovery/govaluate"
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators/cache"
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators/common/dsl"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators/cache"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators/common/dsl"
 )
 
 // CompileMatchers performs the initial setup operation on a matcher

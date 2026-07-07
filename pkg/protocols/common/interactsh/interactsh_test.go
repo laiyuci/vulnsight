@@ -8,10 +8,10 @@ import (
 	"testing"
 
 	serverint "github.com/projectdiscovery/interactsh/pkg/server"
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators"
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators/extractors"
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators/matchers"
-	"github.com/projectdiscovery/nuclei/v3/pkg/output"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators/extractors"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators/matchers"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/output"
 	"github.com/stretchr/testify/require"
 )
 

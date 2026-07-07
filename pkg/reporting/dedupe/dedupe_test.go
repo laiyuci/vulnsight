@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/output"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/output"
 )
 
 func TestDedupeDuplicates(t *testing.T) {

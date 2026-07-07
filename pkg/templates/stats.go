@@ -1,6 +1,6 @@
 package templates
 
-import "github.com/projectdiscovery/nuclei/v3/pkg/utils/stats"
+import "github.com/projectdiscovery/vulnsight/v3/pkg/utils/stats"
 
 type templateStatEntry struct {
 	name        string

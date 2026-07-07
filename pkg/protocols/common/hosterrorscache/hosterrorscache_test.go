@@ -7,7 +7,7 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/contextargs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/contextargs"
 	"github.com/projectdiscovery/utils/errkit"
 	"github.com/stretchr/testify/require"
 )

@@ -6,8 +6,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/expressions"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/render"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/expressions"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/render"
 )
 
 var dslStringMarkerRegex = regexp.MustCompile(`\{\{([^{}]+)\}\}`)

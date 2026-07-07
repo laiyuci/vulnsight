@@ -12,16 +12,16 @@ import (
 	"time"
 
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/internal/pdcp"
-	"github.com/projectdiscovery/nuclei/v3/internal/server"
-	"github.com/projectdiscovery/nuclei/v3/pkg/authprovider"
-	"github.com/projectdiscovery/nuclei/v3/pkg/fuzz/frequency"
-	"github.com/projectdiscovery/nuclei/v3/pkg/input/provider"
-	"github.com/projectdiscovery/nuclei/v3/pkg/installer"
-	"github.com/projectdiscovery/nuclei/v3/pkg/loader/parser"
-	outputstats "github.com/projectdiscovery/nuclei/v3/pkg/output/stats"
-	"github.com/projectdiscovery/nuclei/v3/pkg/scan/events"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/internal/pdcp"
+	"github.com/projectdiscovery/vulnsight/v3/internal/server"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/authprovider"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/fuzz/frequency"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/input/provider"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/installer"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/loader/parser"
+	outputstats "github.com/projectdiscovery/vulnsight/v3/pkg/output/stats"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/scan/events"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
 	uncoverlib "github.com/projectdiscovery/uncover"
 	pdcpauth "github.com/projectdiscovery/utils/auth/pdcp"
 	"github.com/projectdiscovery/utils/env"
@@ -34,40 +34,40 @@ import (
 	"github.com/pkg/errors"
 	"github.com/projectdiscovery/ratelimit"
 
-	"github.com/projectdiscovery/nuclei/v3/internal/colorizer"
-	"github.com/projectdiscovery/nuclei/v3/internal/httpapi"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/config"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/disk"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/loader"
-	"github.com/projectdiscovery/nuclei/v3/pkg/core"
-	"github.com/projectdiscovery/nuclei/v3/pkg/external/customtemplates"
-	fuzzStats "github.com/projectdiscovery/nuclei/v3/pkg/fuzz/stats"
-	"github.com/projectdiscovery/nuclei/v3/pkg/input"
-	parsers "github.com/projectdiscovery/nuclei/v3/pkg/loader/workflow"
-	"github.com/projectdiscovery/nuclei/v3/pkg/output"
-	"github.com/projectdiscovery/nuclei/v3/pkg/progress"
-	"github.com/projectdiscovery/nuclei/v3/pkg/projectfile"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/automaticscan"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/contextargs"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/globalmatchers"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/honeypotdetector"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/hosterrorscache"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/interactsh"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolinit"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolstate"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/uncover"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/utils/excludematchers"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/headless/engine"
-	httpProtocol "github.com/projectdiscovery/nuclei/v3/pkg/protocols/http"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/http/httpclientpool"
-	"github.com/projectdiscovery/nuclei/v3/pkg/reporting"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/stats"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/yaml"
+	"github.com/projectdiscovery/vulnsight/v3/internal/colorizer"
+	"github.com/projectdiscovery/vulnsight/v3/internal/httpapi"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/config"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/disk"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/loader"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/core"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/external/customtemplates"
+	fuzzStats "github.com/projectdiscovery/vulnsight/v3/pkg/fuzz/stats"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/input"
+	parsers "github.com/projectdiscovery/vulnsight/v3/pkg/loader/workflow"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/output"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/progress"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/projectfile"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/automaticscan"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/contextargs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/globalmatchers"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/honeypotdetector"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/hosterrorscache"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/interactsh"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolinit"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolstate"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/uncover"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/utils/excludematchers"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/headless/engine"
+	httpProtocol "github.com/projectdiscovery/vulnsight/v3/pkg/protocols/http"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/http/httpclientpool"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/reporting"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/stats"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/yaml"
 	"github.com/projectdiscovery/retryablehttp-go"
 	ptrutil "github.com/projectdiscovery/utils/ptr"
 )
@@ -126,7 +126,7 @@ func New(options *types.Options) (*Runner, error) {
 	if config.DefaultConfig.CanCheckForUpdates() {
 		if err := installer.NucleiVersionCheck(); err != nil {
 			if options.Verbose || options.Debug {
-				runner.Logger.Error().Msgf("nuclei version check failed got: %s\n", err)
+				runner.Logger.Error().Msgf("vulnsight version check failed got: %s\n", err)
 			}
 		}
 
@@ -143,15 +143,15 @@ func New(options *types.Options) (*Runner, error) {
 			DisablePublicTemplates: options.PublicTemplateDisableDownload,
 		}
 		if err := tm.FreshInstallIfNotExists(); err != nil {
-			runner.Logger.Warning().Msgf("failed to install nuclei templates: %s\n", err)
+			runner.Logger.Warning().Msgf("failed to install vulnsight templates: %s\n", err)
 		}
 		if err := tm.UpdateIfOutdated(); err != nil {
-			runner.Logger.Warning().Msgf("failed to update nuclei templates: %s\n", err)
+			runner.Logger.Warning().Msgf("failed to update vulnsight templates: %s\n", err)
 		}
 
 		if config.DefaultConfig.NeedsIgnoreFileUpdate() {
 			if err := installer.UpdateIgnoreFile(); err != nil {
-				runner.Logger.Warning().Msgf("failed to update nuclei ignore file: %s\n", err)
+				runner.Logger.Warning().Msgf("failed to update vulnsight ignore file: %s\n", err)
 			}
 		}
 
@@ -159,7 +159,7 @@ func New(options *types.Options) (*Runner, error) {
 			// we automatically check for updates unless explicitly disabled
 			// this print statement is only to inform the user that there are no updates
 			if !config.DefaultConfig.NeedsTemplateUpdate() {
-				runner.Logger.Info().Msgf("No new updates found for nuclei templates")
+				runner.Logger.Info().Msgf("No new updates found for vulnsight templates")
 			}
 			// manually trigger update of custom templates
 			if ctm != nil {
@@ -493,7 +493,7 @@ func (r *Runner) Close() {
 		_ = os.RemoveAll(r.tmpDir)
 	}
 
-	//this is no-op unless nuclei is built with stats build tag
+	//this is no-op unless vulnsight is built with stats build tag
 	events.Close()
 }
 
@@ -601,7 +601,7 @@ func (r *Runner) RunEnumeration() error {
 	r.fuzzFrequencyCache = fuzzFreqCache
 
 	// Create the executor options which will be used throughout the execution
-	// stage by the nuclei engine modules.
+	// stage by the vulnsight engine modules.
 	executorOpts := &protocols.ExecutorOptions{
 		Output:              r.output,
 		Options:             r.options,
@@ -687,7 +687,7 @@ func (r *Runner) RunEnumeration() error {
 
 	// list all templates or tags as specified by user.
 	// This uses a separate parser to reduce time taken as
-	// normally nuclei does a lot of compilation and stuff
+	// normally vulnsight does a lot of compilation and stuff
 	// for templates, which we don't want for these simp
 	if r.options.TagList {
 		tagsMap, err := store.LoadTemplateTags()
@@ -770,7 +770,7 @@ func (r *Runner) RunEnumeration() error {
 
 	inputCount := int(r.inputProvider.Count())
 
-	// initialize stats worker ( this is no-op unless nuclei is built with stats build tag)
+	// initialize stats worker ( this is no-op unless vulnsight is built with stats build tag)
 	// during execution a directory with 2 files will be created in the current directory
 	// config.json - containing below info
 	// events.jsonl - containing all start and end times of all templates
@@ -974,7 +974,7 @@ func (r *Runner) displayExecutionInfo(store *loader.Store) {
 		return fmt.Sprintf("Current %s version: %v %v", versionType, version, updateutils.GetVersionDescription(version, latestVersion))
 	}
 
-	gologger.Info().Msg(versionInfo(config.Version, cfg.LatestNucleiVersion, "nuclei"))
+	gologger.Info().Msg(versionInfo(config.Version, cfg.LatestNucleiVersion, "vulnsight"))
 	gologger.Info().Msg(versionInfo(cfg.TemplateVersion, cfg.LatestNucleiTemplatesVersion, "nuclei-templates"))
 	if !HideAutoSaveMsg {
 		if r.pdcpUploadErrMsg != "" {

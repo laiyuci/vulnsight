@@ -1,10 +1,10 @@
 package dcerpc
 
 import (
-	lib_dcerpc "github.com/projectdiscovery/nuclei/v3/pkg/js/libs/dcerpc"
+	lib_dcerpc "github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/dcerpc"
 
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/gojs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/gojs"
 )
 
 var (

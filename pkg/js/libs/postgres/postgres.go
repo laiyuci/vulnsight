@@ -11,9 +11,9 @@ import (
 	"github.com/go-pg/pg/v10"
 	"github.com/praetorian-inc/fingerprintx/pkg/plugins"
 	postgres "github.com/praetorian-inc/fingerprintx/pkg/plugins/services/postgresql"
-	utils "github.com/projectdiscovery/nuclei/v3/pkg/js/utils"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/utils/pgwrap"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolstate"
+	utils "github.com/projectdiscovery/vulnsight/v3/pkg/js/utils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/utils/pgwrap"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolstate"
 )
 
 type (

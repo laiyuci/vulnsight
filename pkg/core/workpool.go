@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates/types"
 	syncutil "github.com/projectdiscovery/utils/sync"
 )
 

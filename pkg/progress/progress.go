@@ -9,7 +9,7 @@ import (
 
 	"github.com/projectdiscovery/clistats"
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
 )
 
 // Progress is an interface implemented by nuclei progress display

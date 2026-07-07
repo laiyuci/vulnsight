@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	nuclei "github.com/projectdiscovery/nuclei/v3/lib"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
+	nuclei "github.com/projectdiscovery/vulnsight/v3/lib"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
 	"github.com/stretchr/testify/require"
 )
 

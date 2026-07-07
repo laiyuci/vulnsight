@@ -1,10 +1,10 @@
 package ikev2
 
 import (
-	lib_ikev2 "github.com/projectdiscovery/nuclei/v3/pkg/js/libs/ikev2"
+	lib_ikev2 "github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/ikev2"
 
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/gojs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/gojs"
 )
 
 var (

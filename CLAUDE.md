@@ -34,7 +34,7 @@ Nuclei is a modern, high-performance vulnerability scanner built in Go that leve
 ## Architecture Overview
 
 ### Core Components
-- **cmd/nuclei** - Main CLI entry point with flag parsing and configuration
+- **cmd/vulnsight** - Main CLI entry point with flag parsing and configuration
 - **internal/runner** - Core runner that orchestrates the entire scanning process
 - **pkg/core** - Execution engine with work pools and template clustering
 - **pkg/templates** - Template parsing, compilation, and management

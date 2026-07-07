@@ -8,7 +8,7 @@ import (
 	"net"
 	"testing"
 
-	"github.com/projectdiscovery/nuclei/v3/internal/tests/testutils"
+	"github.com/projectdiscovery/vulnsight/v3/internal/tests/testutils"
 )
 
 func TestSSL(t *testing.T) {

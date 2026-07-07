@@ -6,13 +6,13 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/input/provider"
-	"github.com/projectdiscovery/nuclei/v3/pkg/output"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/contextargs"
-	"github.com/projectdiscovery/nuclei/v3/pkg/scan"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates/types"
-	generalTypes "github.com/projectdiscovery/nuclei/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/input/provider"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/output"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/contextargs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/scan"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates/types"
+	generalTypes "github.com/projectdiscovery/vulnsight/v3/pkg/types"
 	syncutil "github.com/projectdiscovery/utils/sync"
 )
 

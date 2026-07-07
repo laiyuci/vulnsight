@@ -13,11 +13,11 @@ import (
 
 	"github.com/alitto/pond"
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/internal/server/scope"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/config"
-	"github.com/projectdiscovery/nuclei/v3/pkg/fuzz/stats"
-	"github.com/projectdiscovery/nuclei/v3/pkg/output"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols"
+	"github.com/projectdiscovery/vulnsight/v3/internal/server/scope"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/config"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/fuzz/stats"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/output"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols"
 	"github.com/projectdiscovery/utils/env"
 )
 

@@ -7,7 +7,7 @@ import (
 
 	"fmt"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolstate"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolstate"
 
 	"github.com/zmap/zgrab2/lib/smb/smb"
 )

@@ -3,7 +3,7 @@ package utils
 import (
 	"testing"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/yaml"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/yaml"
 	"github.com/stretchr/testify/require"
 )
 

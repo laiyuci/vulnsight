@@ -4,8 +4,8 @@ import (
 	"encoding/hex"
 
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/libs/structs"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/utils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/structs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/utils"
 )
 
 type (

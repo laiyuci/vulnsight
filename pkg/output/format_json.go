@@ -1,6 +1,6 @@
 package output
 
-import json "github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
+import json "github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
 
 // formatJSON formats the output for json based formatting
 func (w *StandardWriter) formatJSON(output *ResultEvent) ([]byte, error) {

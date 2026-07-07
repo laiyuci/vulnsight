@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"regexp"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates/extensions"
-	filepathutil "github.com/projectdiscovery/nuclei/v3/pkg/utils/filepath"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates/extensions"
+	filepathutil "github.com/projectdiscovery/vulnsight/v3/pkg/utils/filepath"
 	"github.com/projectdiscovery/utils/errkit"
 	fileutil "github.com/projectdiscovery/utils/file"
 	stringsutil "github.com/projectdiscovery/utils/strings"

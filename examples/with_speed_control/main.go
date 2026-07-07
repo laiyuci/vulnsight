@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	nuclei "github.com/projectdiscovery/nuclei/v3/lib"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates/types"
+	nuclei "github.com/projectdiscovery/vulnsight/v3/lib"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates/types"
 )
 
 func main() {

@@ -1,10 +1,10 @@
 package mysql
 
 import (
-	lib_mysql "github.com/projectdiscovery/nuclei/v3/pkg/js/libs/mysql"
+	lib_mysql "github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/mysql"
 
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/gojs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/gojs"
 )
 
 var (

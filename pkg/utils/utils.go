@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/cespare/xxhash"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog"
 	"github.com/projectdiscovery/ratelimit"
 	"github.com/projectdiscovery/retryablehttp-go"
 	mapsutil "github.com/projectdiscovery/utils/maps"

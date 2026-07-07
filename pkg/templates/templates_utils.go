@@ -1,6 +1,6 @@
 package templates
 
-import "github.com/projectdiscovery/nuclei/v3/pkg/protocols"
+import "github.com/projectdiscovery/vulnsight/v3/pkg/protocols"
 
 // HasRequest returns true if the given requests slice is non-empty.
 //

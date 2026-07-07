@@ -4,7 +4,7 @@ import (
 	"encoding/base64"
 	"testing"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/authprovider/authx"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/authprovider/authx"
 	urlutil "github.com/projectdiscovery/utils/url"
 	"github.com/stretchr/testify/require"
 )

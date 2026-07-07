@@ -9,8 +9,8 @@ import (
 
 	"github.com/logrusorgru/aurora/v4"
 	"github.com/pkg/errors"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/config"
-	filepathutil "github.com/projectdiscovery/nuclei/v3/pkg/utils/filepath"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/config"
+	filepathutil "github.com/projectdiscovery/vulnsight/v3/pkg/utils/filepath"
 	stringsutil "github.com/projectdiscovery/utils/strings"
 	updateutils "github.com/projectdiscovery/utils/update"
 	urlutil "github.com/projectdiscovery/utils/url"

@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/config"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/config"
 )
 
 func TestTemplatePathURLUsesTemplateDirBoundaries(t *testing.T) {

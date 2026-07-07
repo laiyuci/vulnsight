@@ -11,9 +11,9 @@ import (
 	"sync"
 
 	"github.com/projectdiscovery/gologger"
-	filepathutil "github.com/projectdiscovery/nuclei/v3/pkg/utils/filepath"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/yaml"
+	filepathutil "github.com/projectdiscovery/vulnsight/v3/pkg/utils/filepath"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/yaml"
 	"github.com/projectdiscovery/utils/env"
 	"github.com/projectdiscovery/utils/errkit"
 	fileutil "github.com/projectdiscovery/utils/file"

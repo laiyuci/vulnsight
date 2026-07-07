@@ -8,8 +8,8 @@ import (
 
 	"github.com/hashicorp/golang-lru/v2/expirable"
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils"
 	"github.com/projectdiscovery/ratelimit"
 )
 

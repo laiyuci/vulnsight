@@ -113,7 +113,7 @@ Nuclei'nin tam [**`dokümantasyonuna buradan`**](https://docs.projectdiscovery.i
 `nuclei` yüklemek için **go >= 1.24.2** gerektirir. Repoyu almak için aşağıdaki komutu çalıştırın:
 
 ```sh
-go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+go install -v github.com/projectdiscovery/vulnsight/v3/cmd/vulnsight@latest
 ```
 
 Nuclei kurulumu hakkında daha fazla bilgi edinmek için `https://docs.projectdiscovery.io/tools/nuclei/install` adresine bakın.

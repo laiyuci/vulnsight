@@ -7,8 +7,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/scan/events"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/scan/events"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
 	fileutil "github.com/projectdiscovery/utils/file"
 )
 

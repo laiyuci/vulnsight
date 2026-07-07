@@ -20,8 +20,8 @@ import (
 	gpsmb "github.com/Mzack9999/goimpacket/pkg/smb"
 	"github.com/projectdiscovery/goja"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/utils"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolstate"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/utils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolstate"
 )
 
 // Secret is the result of a DCSync against a single principal.

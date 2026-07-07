@@ -6,8 +6,8 @@ import (
 	"sync"
 
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/replacer"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/replacer"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
 	"github.com/projectdiscovery/utils/errkit"
 	sliceutil "github.com/projectdiscovery/utils/slice"
 )

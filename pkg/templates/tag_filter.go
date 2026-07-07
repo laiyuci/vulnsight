@@ -10,11 +10,11 @@ import (
 
 	"github.com/projectdiscovery/gologger"
 	"github.com/projectdiscovery/govaluate"
-	"github.com/projectdiscovery/nuclei/v3/pkg/model/types/severity"
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators/common/dsl"
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators/extractors"
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators/matchers"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model/types/severity"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators/common/dsl"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators/extractors"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators/matchers"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates/types"
 	sliceutil "github.com/projectdiscovery/utils/slice"
 )
 

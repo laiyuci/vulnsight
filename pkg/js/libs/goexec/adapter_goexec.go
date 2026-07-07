@@ -21,7 +21,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/oiweiwei/go-msrpc/dcerpc"
 	"github.com/oiweiwei/go-msrpc/ssp/gssapi"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolstate"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolstate"
 	"github.com/rs/zerolog"
 )
 

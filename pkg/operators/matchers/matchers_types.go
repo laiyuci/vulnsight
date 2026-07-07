@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/invopop/jsonschema"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
 )
 
 // MatcherType is the type of the matcher specified

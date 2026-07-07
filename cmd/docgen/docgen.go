@@ -8,11 +8,11 @@ import (
 	"regexp"
 
 	"github.com/invopop/jsonschema"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
 )
 
-var pathRegex = regexp.MustCompile(`github\.com/projectdiscovery/nuclei/v3/(?:internal|pkg)/(?:.*/)?([A-Za-z.]+)`)
+var pathRegex = regexp.MustCompile(`github\.com/projectdiscovery/vulnsight/v3/(?:internal|pkg)/(?:.*/)?([A-Za-z.]+)`)
 
 func writeToFile(filename string, data []byte) {
 	file, err := os.Create(filename)

@@ -7,8 +7,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/model/types/severity"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model/types/severity"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates/types"
 )
 
 func TestFilterMatches(t *testing.T) {

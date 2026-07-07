@@ -7,9 +7,9 @@ import (
 
 	"fmt"
 
-	utils "github.com/projectdiscovery/nuclei/v3/pkg/js/utils"
+	utils "github.com/projectdiscovery/vulnsight/v3/pkg/js/utils"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolstate"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolstate"
 )
 
 func memoizedisPostgres(ctx context.Context, executionId string, host string, port int) (bool, error) {

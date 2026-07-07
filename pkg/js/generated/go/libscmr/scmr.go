@@ -1,10 +1,10 @@
 package scmr
 
 import (
-	lib_scmr "github.com/projectdiscovery/nuclei/v3/pkg/js/libs/scmr"
+	lib_scmr "github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/scmr"
 
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/gojs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/gojs"
 )
 
 var (

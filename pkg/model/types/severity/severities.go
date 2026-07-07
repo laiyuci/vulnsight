@@ -5,8 +5,8 @@ import (
 	"strings"
 
 	"github.com/projectdiscovery/goflags"
-	"github.com/projectdiscovery/nuclei/v3/pkg/model/types/stringslice"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model/types/stringslice"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
 )
 
 // Severities used by the goflags library for parsing an array of Severity types, passed as CLI arguments from the user

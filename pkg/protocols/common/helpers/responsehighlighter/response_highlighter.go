@@ -7,7 +7,7 @@ import (
 
 	"github.com/logrusorgru/aurora/v4"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators"
 )
 
 var colorFunction = aurora.Green

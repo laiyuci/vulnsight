@@ -16,7 +16,7 @@ import (
 	"testing"
 
 	"github.com/google/shlex"
-	"github.com/projectdiscovery/nuclei/v3/internal/tests/testutils"
+	"github.com/projectdiscovery/vulnsight/v3/internal/tests/testutils"
 )
 
 type functionalHarness struct {
@@ -368,7 +368,7 @@ func buildCurrentBinary(repoRoot, binaryPath string) error {
 	if err := os.MkdirAll(filepath.Dir(binaryPath), 0755); err != nil {
 		return fmt.Errorf("failed to create bin directory: %w", err)
 	}
-	cmd := exec.Command("go", "build", "-o", binaryPath, "./cmd/nuclei")
+	cmd := exec.Command("go", "build", "-o", binaryPath, "./cmd/vulnsight")
 	cmd.Dir = repoRoot
 	output, err := cmd.CombinedOutput()
 	if err != nil {

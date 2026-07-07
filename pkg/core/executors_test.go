@@ -7,14 +7,14 @@ import (
 	"testing"
 	"time"
 
-	inputtypes "github.com/projectdiscovery/nuclei/v3/pkg/input/types"
-	"github.com/projectdiscovery/nuclei/v3/pkg/output"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/contextargs"
-	"github.com/projectdiscovery/nuclei/v3/pkg/scan"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates"
-	tmpltypes "github.com/projectdiscovery/nuclei/v3/pkg/templates/types"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
+	inputtypes "github.com/projectdiscovery/vulnsight/v3/pkg/input/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/output"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/contextargs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/scan"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates"
+	tmpltypes "github.com/projectdiscovery/vulnsight/v3/pkg/templates/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
 )
 
 // fakeExecuter is a simple stub for protocols.Executer used to test executeTemplateOnInput

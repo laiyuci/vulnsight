@@ -3,7 +3,7 @@
 
 package matchers
 
-import "github.com/projectdiscovery/nuclei/v3/pkg/operators/cache"
+import "github.com/projectdiscovery/vulnsight/v3/pkg/operators/cache"
 
 func init() {
 	cache.SetCapacities(128, 128)

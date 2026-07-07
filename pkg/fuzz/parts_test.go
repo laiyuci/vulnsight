@@ -5,11 +5,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/interactsh"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/variables"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/interactsh"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/variables"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils"
 	"github.com/stretchr/testify/require"
 )
 

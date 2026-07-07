@@ -4,7 +4,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/fuzz/analyzers"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/fuzz/analyzers"
 	"golang.org/x/net/html"
 )
 

@@ -16,7 +16,7 @@ const (
 var (
 	// Global Var to control behaviours specific to cli or library
 	// maybe this should be moved to utils ??
-	// this is overwritten in cmd/nuclei/main.go
+	// this is overwritten in cmd/vulnsight/vulnsight.go
 	CurrentAppMode = AppModeLibrary
 )
 
@@ -37,7 +37,7 @@ const (
 	CustomGitHubTemplatesDirName = "github"
 	CustomAzureTemplatesDirName  = "azure"
 	CustomGitLabTemplatesDirName = "gitlab"
-	BinaryName                   = "nuclei"
+	BinaryName                   = "vulnsight"
 	FallbackConfigFolderName     = ".nuclei-config"
 	NucleiConfigDirEnv           = "NUCLEI_CONFIG_DIR"
 	NucleiTemplatesDirEnv        = "NUCLEI_TEMPLATES_DIR"

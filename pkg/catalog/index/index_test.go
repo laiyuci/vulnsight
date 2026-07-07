@@ -7,14 +7,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/model"
-	"github.com/projectdiscovery/nuclei/v3/pkg/model/types/severity"
-	"github.com/projectdiscovery/nuclei/v3/pkg/model/types/stringslice"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/code"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/headless"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/http"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model/types/severity"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model/types/stringslice"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/code"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/headless"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/http"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates/types"
 	"github.com/stretchr/testify/require"
 )
 

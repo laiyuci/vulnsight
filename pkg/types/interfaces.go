@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/model/types/severity"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model/types/severity"
 )
 
 // JSONScalarToString converts an interface coming from json to string

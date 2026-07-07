@@ -1,14 +1,16 @@
 version: 2
 
+project_name: vulnsight
+
 before:
   hooks:
     - go mod download
     - go mod verify
 
 builds:
-  - main: cmd/nuclei/main.go
-    binary: nuclei
-    id: nuclei-cli
+  - main: cmd/vulnsight/vulnsight.go
+    binary: vulnsight
+    id: vulnsight-cli
     env:
       - CGO_ENABLED=0
       - GOEXPERIMENT=greenteagc
@@ -40,8 +42,8 @@ builds:
 
 archives:
   - formats: [zip]
-    id: nuclei
-    ids: [nuclei-cli]
+    id: vulnsight
+    ids: [vulnsight-cli]
     name_template: '{{ .ProjectName }}_{{ .Version }}_{{ if eq .Os "darwin" }}macOS{{ else }}{{ .Os }}{{ end }}_{{ .Arch }}'
 
 checksum:

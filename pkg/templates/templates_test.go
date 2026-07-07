@@ -4,14 +4,14 @@ import (
 	"os"
 	"testing"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/fuzz"
-	codeProtocol "github.com/projectdiscovery/nuclei/v3/pkg/protocols/code"
-	fileProtocol "github.com/projectdiscovery/nuclei/v3/pkg/protocols/file"
-	headlessProtocol "github.com/projectdiscovery/nuclei/v3/pkg/protocols/headless"
-	httpProtocol "github.com/projectdiscovery/nuclei/v3/pkg/protocols/http"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/yaml"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/fuzz"
+	codeProtocol "github.com/projectdiscovery/vulnsight/v3/pkg/protocols/code"
+	fileProtocol "github.com/projectdiscovery/vulnsight/v3/pkg/protocols/file"
+	headlessProtocol "github.com/projectdiscovery/vulnsight/v3/pkg/protocols/headless"
+	httpProtocol "github.com/projectdiscovery/vulnsight/v3/pkg/protocols/http"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/yaml"
 	"github.com/stretchr/testify/require"
 )
 

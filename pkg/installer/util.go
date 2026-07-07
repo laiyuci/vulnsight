@@ -13,7 +13,7 @@ import (
 
 	"github.com/Masterminds/semver/v3"
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/config"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/config"
 	"github.com/projectdiscovery/utils/errkit"
 )
 

@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
 	"github.com/stretchr/testify/require"
 )
 

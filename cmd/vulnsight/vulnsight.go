@@ -14,8 +14,8 @@ import (
 	"time"
 
 	"github.com/projectdiscovery/gologger"
-	_pdcp "github.com/projectdiscovery/nuclei/v3/internal/pdcp"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/yaml"
+	_pdcp "github.com/projectdiscovery/vulnsight/v3/internal/pdcp"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/yaml"
 	"github.com/projectdiscovery/utils/auth/pdcp"
 	"github.com/projectdiscovery/utils/env"
 	_ "github.com/projectdiscovery/utils/pprof"
@@ -25,21 +25,21 @@ import (
 	"github.com/projectdiscovery/goflags"
 	"github.com/projectdiscovery/gologger/levels"
 	"github.com/projectdiscovery/interactsh/pkg/client"
-	"github.com/projectdiscovery/nuclei/v3/internal/runner"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/config"
-	"github.com/projectdiscovery/nuclei/v3/pkg/input/provider"
-	"github.com/projectdiscovery/nuclei/v3/pkg/installer"
-	"github.com/projectdiscovery/nuclei/v3/pkg/model/types/severity"
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators/common/dsl"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/uncover"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/http"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates/extensions"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates/signer"
-	templateTypes "github.com/projectdiscovery/nuclei/v3/pkg/templates/types"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types/scanstrategy"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/monitor"
+	"github.com/projectdiscovery/vulnsight/v3/internal/runner"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/config"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/input/provider"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/installer"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model/types/severity"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators/common/dsl"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/uncover"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/http"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates/extensions"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates/signer"
+	templateTypes "github.com/projectdiscovery/vulnsight/v3/pkg/templates/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types/scanstrategy"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/monitor"
 	"github.com/projectdiscovery/utils/errkit"
 	fileutil "github.com/projectdiscovery/utils/file"
 	unitutils "github.com/projectdiscovery/utils/unit"
@@ -238,7 +238,7 @@ func main() {
 		if options.Validate {
 			options.Logger.Fatal().Msgf("Could not validate templates: %s\n", err)
 		} else {
-			options.Logger.Fatal().Msgf("Could not run nuclei: %s\n", err)
+			options.Logger.Fatal().Msgf("Could not run vulnsight: %s\n", err)
 		}
 	}
 	nucleiRunner.Close()
@@ -250,14 +250,14 @@ func main() {
 
 func readConfig() *goflags.FlagSet {
 
-	// when true updates nuclei binary to latest version
+	// when true updates vulnsight binary to latest version
 	var updateNucleiBinary bool
 	var pdcpauth string
 	var fuzzFlag bool
 
 	flagSet := goflags.NewFlagSet()
 	flagSet.CaseSensitive = true
-	flagSet.SetDescription(`Nuclei is a fast, template based vulnerability scanner focusing
+	flagSet.SetDescription(`Vulnsight is a fast, template based vulnerability scanner focusing
 on extensive configurability, massive extensibility and ease of use.`)
 
 	/* TODO Important: The defined default values, especially for slice/array types are NOT DEFAULT VALUES, but rather implicit values to which the user input is appended.
@@ -291,7 +291,7 @@ on extensive configurability, massive extensibility and ease of use.`)
 		flagSet.StringVarP(&options.AITemplatePrompt, "prompt", "ai", "", "generate and run template using ai prompt"),
 		flagSet.StringSliceVarP(&options.Workflows, "workflows", "w", nil, "list of workflow or workflow directory to run (comma-separated, file)", goflags.FileCommaSeparatedStringSliceOptions),
 		flagSet.StringSliceVarP(&options.WorkflowURLs, "workflow-url", "wurl", nil, "workflow url or list containing workflow urls to run (comma-separated, file)", goflags.FileCommaSeparatedStringSliceOptions),
-		flagSet.BoolVar(&options.Validate, "validate", false, "validate the passed templates to nuclei"),
+		flagSet.BoolVar(&options.Validate, "validate", false, "validate the passed templates to vulnsight"),
 		flagSet.BoolVarP(&options.NoStrictSyntax, "no-strict-syntax", "nss", false, "disable strict syntax check on templates"),
 		flagSet.BoolVarP(&options.TemplateDisplay, "template-display", "td", false, "displays the templates content"),
 		flagSet.BoolVar(&options.TemplateList, "tl", false, "list all templates matching current filters"),
@@ -324,8 +324,8 @@ on extensive configurability, massive extensibility and ease of use.`)
 
 	flagSet.CreateGroup("output", "Output",
 		flagSet.StringVarP(&options.Output, "output", "o", "", "output file to write found issues/vulnerabilities"),
-		flagSet.BoolVarP(&options.StoreResponse, "store-resp", "sresp", false, "store all request/response passed through nuclei to output directory"),
-		flagSet.StringVarP(&options.StoreResponseDir, "store-resp-dir", "srd", runner.DefaultDumpTrafficOutputFolder, "store all request/response passed through nuclei to custom directory"),
+		flagSet.BoolVarP(&options.StoreResponse, "store-resp", "sresp", false, "store all request/response passed through vulnsight to output directory"),
+		flagSet.StringVarP(&options.StoreResponseDir, "store-resp-dir", "srd", runner.DefaultDumpTrafficOutputFolder, "store all request/response passed through vulnsight to custom directory"),
 		flagSet.BoolVar(&options.Silent, "silent", false, "display findings only"),
 		flagSet.BoolVarP(&options.NoColor, "no-color", "nc", false, "disable output content coloring (ANSI escape codes)"),
 		flagSet.BoolVarP(&options.JSONL, "jsonl", "j", false, "write output in JSONL(ines) format"),
@@ -334,7 +334,7 @@ on extensive configurability, massive extensibility and ease of use.`)
 		flagSet.BoolVarP(&options.OmitTemplate, "omit-template", "ot", false, "omit encoded template in the JSON, JSONL output"),
 		flagSet.BoolVarP(&options.NoMeta, "no-meta", "nm", false, "disable printing result metadata in cli output"),
 		flagSet.BoolVarP(&options.Timestamp, "timestamp", "ts", false, "enables printing timestamp in cli output"),
-		flagSet.StringVarP(&options.ReportingDB, "report-db", "rdb", "", "nuclei reporting database (always use this to persist report data)"),
+		flagSet.StringVarP(&options.ReportingDB, "report-db", "rdb", "", "vulnsight reporting database (always use this to persist report data)"),
 		flagSet.BoolVarP(&options.MatcherStatus, "matcher-status", "ms", false, "display match failure status"),
 		flagSet.StringVarP(&options.MarkdownExportDirectory, "markdown-export", "me", "", "directory to export results in markdown format"),
 		flagSet.StringVarP(&options.SarifExport, "sarif-export", "se", "", "file to export results in SARIF format"),
@@ -345,17 +345,17 @@ on extensive configurability, massive extensibility and ease of use.`)
 	)
 
 	flagSet.CreateGroup("configs", "Configurations",
-		flagSet.StringVar(&cfgFile, "config", "", "path to the nuclei configuration file"),
+		flagSet.StringVar(&cfgFile, "config", "", "path to the vulnsight configuration file"),
 		flagSet.StringVarP(&templateProfile, "profile", "tp", "", "template profile config file to run"),
 		flagSet.BoolVarP(&options.ListTemplateProfiles, "profile-list", "tpl", false, "list community template profiles"),
 		flagSet.BoolVarP(&options.FollowRedirects, "follow-redirects", "fr", false, "enable following redirects for http templates"),
 		flagSet.BoolVarP(&options.FollowHostRedirects, "follow-host-redirects", "fhr", false, "follow redirects on the same host"),
 		flagSet.IntVarP(&options.MaxRedirects, "max-redirects", "mr", 10, "max number of redirects to follow for http templates"),
 		flagSet.BoolVarP(&options.DisableRedirects, "disable-redirects", "dr", false, "disable redirects for http templates"),
-		flagSet.StringVarP(&options.ReportingConfig, "report-config", "rc", "", "nuclei reporting module configuration file"), // TODO merge into the config file or rename to issue-tracking
+		flagSet.StringVarP(&options.ReportingConfig, "report-config", "rc", "", "vulnsight reporting module configuration file"), // TODO merge into the config file or rename to issue-tracking
 		flagSet.StringSliceVarP(&options.CustomHeaders, "header", "H", nil, "custom header/cookie to include in all http request in header:value format (cli, file)", goflags.FileStringSliceOptions),
 		flagSet.RuntimeMapVarP(&options.Vars, "var", "V", nil, "custom vars in key=value format"),
-		flagSet.StringVarP(&options.ResolversFile, "resolvers", "r", "", "file containing resolver list for nuclei"),
+		flagSet.StringVarP(&options.ResolversFile, "resolvers", "r", "", "file containing resolver list for vulnsight"),
 		flagSet.BoolVarP(&options.SystemResolvers, "system-resolvers", "sr", false, "use system DNS resolving as error fallback"),
 		flagSet.BoolVarP(&options.DisableClustering, "disable-clustering", "dc", false, "disable clustering of requests"),
 		flagSet.BoolVar(&options.OfflineHTTP, "passive", false, "enable passive HTTP response processing mode"),
@@ -375,7 +375,7 @@ on extensive configurability, massive extensibility and ease of use.`)
 		flagSet.StringVarP(&options.SourceIP, "source-ip", "sip", "", "source ip address to use for network scan"),
 		flagSet.IntVarP(&options.ResponseReadSize, "response-size-read", "rsr", 0, "max response size to read in bytes"),
 		flagSet.IntVarP(&options.ResponseSaveSize, "response-size-save", "rss", unitutils.Mega, "max response size to read in bytes"),
-		flagSet.CallbackVar(resetCallback, "reset", "reset removes all nuclei configuration and data files (including nuclei-templates)"),
+		flagSet.CallbackVar(resetCallback, "reset", "reset removes all vulnsight configuration and data files (including nuclei-templates)"),
 		flagSet.BoolVarP(&options.TlsImpersonate, "tls-impersonate", "tlsi", false, "enable experimental client hello (ja3) tls randomization"),
 		flagSet.StringVarP(&options.HttpApiEndpoint, "http-api-endpoint", "hae", "", "experimental http api endpoint"),
 	)
@@ -394,7 +394,7 @@ on extensive configurability, massive extensibility and ease of use.`)
 		flagSet.StringVarP(&options.FuzzingType, "fuzzing-type", "ft", "", "overrides fuzzing type set in template (replace, prefix, postfix, infix)"),
 		flagSet.StringVarP(&options.FuzzingMode, "fuzzing-mode", "fm", "", "overrides fuzzing mode set in template (multiple, single)"),
 		flagSet.BoolVar(&fuzzFlag, "fuzz", false, "enable loading fuzzing templates (Deprecated: use -dast instead)"),
-		flagSet.BoolVar(&options.DAST, "dast", false, "enable / run dast (fuzz) nuclei templates"),
+		flagSet.BoolVar(&options.DAST, "dast", false, "enable / run dast (fuzz) vulnsight templates"),
 		flagSet.BoolVarP(&options.DASTServer, "dast-server", "dts", false, "enable dast server mode (live fuzzing)"),
 		flagSet.BoolVarP(&options.DASTReport, "dast-report", "dtr", false, "write dast scan report to file"),
 		flagSet.StringVarP(&options.DASTServerToken, "dast-server-token", "dtst", "", "dast server token (optional)"),
@@ -456,7 +456,7 @@ on extensive configurability, massive extensibility and ease of use.`)
 		flagSet.IntVar(&options.PageTimeout, "page-timeout", 20, "seconds to wait for each page in headless mode"),
 		flagSet.BoolVarP(&options.ShowBrowser, "show-browser", "sb", false, "show the browser on the screen when running templates with headless mode"),
 		flagSet.StringSliceVarP(&options.HeadlessOptionalArguments, "headless-options", "ho", nil, "start headless chrome with additional options", goflags.FileCommaSeparatedStringSliceOptions),
-		flagSet.BoolVarP(&options.UseInstalledChrome, "system-chrome", "sc", false, "use local installed Chrome browser instead of nuclei installed"),
+		flagSet.BoolVarP(&options.UseInstalledChrome, "system-chrome", "sc", false, "use local installed Chrome browser instead of vulnsight installed"),
 		flagSet.StringVarP(&options.CDPEndpoint, "cdp-endpoint", "cdpe", "", "use remote browser via Chrome DevTools Protocol (CDP) endpoint"),
 		flagSet.BoolVarP(&options.ShowActions, "list-headless-action", "lha", false, "list available headless actions"),
 	)
@@ -470,8 +470,8 @@ on extensive configurability, massive extensibility and ease of use.`)
 		flagSet.BoolVarP(&options.ListDslSignatures, "list-dsl-function", "ldf", false, "list all supported DSL function signatures"),
 		flagSet.StringVarP(&options.TraceLogFile, "trace-log", "tlog", "", "file to write sent requests trace log"),
 		flagSet.StringVarP(&options.ErrorLogFile, "error-log", "elog", "", "file to write sent requests error log"),
-		flagSet.CallbackVar(printVersion, "version", "show nuclei version"),
-		flagSet.BoolVarP(&options.HangMonitor, "hang-monitor", "hm", false, "enable nuclei hang monitoring"),
+		flagSet.CallbackVar(printVersion, "version", "show vulnsight version"),
+		flagSet.BoolVarP(&options.HangMonitor, "hang-monitor", "hm", false, "enable vulnsight hang monitoring"),
 		flagSet.BoolVarP(&options.Verbose, "verbose", "v", false, "show verbose output"),
 		flagSet.StringVar(&memProfile, "profile-mem", "", "generate memory (heap) profile & trace files"),
 		flagSet.BoolVar(&options.VerboseVerbose, "vv", false, "display templates loaded for scan"),
@@ -483,7 +483,7 @@ on extensive configurability, massive extensibility and ease of use.`)
 	)
 
 	flagSet.CreateGroup("update", "Update",
-		flagSet.BoolVarP(&updateNucleiBinary, "update", "up", false, "update nuclei engine to the latest released version"),
+		flagSet.BoolVarP(&updateNucleiBinary, "update", "up", false, "update vulnsight engine to the latest released version"),
 		flagSet.BoolVarP(&options.UpdateTemplates, "update-templates", "ut", false, "update nuclei-templates to latest released version"),
 		flagSet.StringVarP(&options.NewTemplatesDirectory, "update-template-dir", "ud", "", "custom directory to install / update nuclei-templates"),
 		flagSet.CallbackVarP(disableUpdatesCallback, "disable-update-check", "duc", "disable automatic nuclei/templates update check"),
@@ -499,7 +499,7 @@ on extensive configurability, massive extensibility and ease of use.`)
 		flagSet.BoolVar(&options.EnableProgressBar, "stats", false, "display statistics about the running scan"),
 		flagSet.BoolVarP(&options.StatsJSON, "stats-json", "sj", false, "display statistics in JSONL(ines) format"),
 		flagSet.IntVarP(&options.StatsInterval, "stats-interval", "si", 5, "number of seconds to wait between showing a statistics update"),
-		flagSet.IntVarP(&options.MetricsPort, "metrics-port", "mp", 9092, "port to expose nuclei metrics on"),
+		flagSet.IntVarP(&options.MetricsPort, "metrics-port", "mp", 9092, "port to expose vulnsight metrics on"),
 		flagSet.BoolVarP(&options.HTTPStats, "http-stats", "hps", false, "enable http status capturing (experimental)"),
 	)
 
@@ -509,35 +509,35 @@ on extensive configurability, massive extensibility and ease of use.`)
 		flagSet.BoolVarP(&options.EnableCloudUpload, "cloud-upload", "cup", false, "upload scan results to pdcp dashboard [DEPRECATED use -dashboard]"),
 		flagSet.StringVarP(&options.ScanID, "scan-id", "sid", "", "upload scan results to existing scan id (optional)"),
 		flagSet.StringVarP(&options.ScanName, "scan-name", "sname", "", "scan name to set (optional)"),
-		flagSet.BoolVarP(&options.EnableCloudUpload, "dashboard", "pd", false, "upload / view nuclei results in projectdiscovery cloud (pdcp) UI dashboard"),
-		flagSet.StringVarP(&options.ScanUploadFile, "dashboard-upload", "pdu", "", "upload / view nuclei results file (jsonl) in projectdiscovery cloud (pdcp) UI dashboard"),
+		flagSet.BoolVarP(&options.EnableCloudUpload, "dashboard", "pd", false, "upload / view vulnsight results in projectdiscovery cloud (pdcp) UI dashboard"),
+		flagSet.StringVarP(&options.ScanUploadFile, "dashboard-upload", "pdu", "", "upload / view vulnsight results file (jsonl) in projectdiscovery cloud (pdcp) UI dashboard"),
 	)
 
 	flagSet.CreateGroup("Authentication", "Authentication",
-		flagSet.StringSliceVarP(&options.SecretsFile, "secret-file", "sf", nil, "path to config file containing secrets for nuclei authenticated scan", goflags.CommaSeparatedStringSliceOptions),
+		flagSet.StringSliceVarP(&options.SecretsFile, "secret-file", "sf", nil, "path to config file containing secrets for vulnsight authenticated scan", goflags.CommaSeparatedStringSliceOptions),
 		flagSet.BoolVarP(&options.PreFetchSecrets, "prefetch-secrets", "ps", false, "prefetch secrets from the secrets file"),
 	)
 
 	flagSet.SetCustomHelpText(`EXAMPLES:
-Run nuclei on single host:
-	$ nuclei -target example.com
+Run vulnsight on single host:
+	$ vulnsight -target example.com
 
-Run nuclei with specific template directories:
-	$ nuclei -target example.com -t http/cves/ -t ssl
+Run vulnsight with specific template directories:
+	$ vulnsight -target example.com -t http/cves/ -t ssl
 
-Run nuclei against a list of hosts:
-	$ nuclei -list hosts.txt
+Run vulnsight against a list of hosts:
+	$ vulnsight -list hosts.txt
 
-Run nuclei with a JSON output:
-	$ nuclei -target example.com -json-export output.json
+Run vulnsight with a JSON output:
+	$ vulnsight -target example.com -json-export output.json
 
-Run nuclei with sorted Markdown outputs (with environment variables):
-	$ MARKDOWN_EXPORT_SORT_MODE=template nuclei -target example.com -markdown-export nuclei_report/
+Run vulnsight with sorted Markdown outputs (with environment variables):
+	$ MARKDOWN_EXPORT_SORT_MODE=template vulnsight -target example.com -markdown-export nuclei_report/
 
 Additional documentation is available at: https://docs.nuclei.sh/getting-started/running
 	`)
 
-	// nuclei has multiple migrations
+	// vulnsight has multiple migrations
 	// ex: resume.cfg moved to platform standard cache dir from config dir
 	// ex: config.yaml moved to platform standard config dir from linux specific config dir
 	// and hence it will be attempted in config package during init
@@ -770,16 +770,16 @@ func disableUpdatesCallback() {
 	config.DefaultConfig.DisableUpdateCheck()
 }
 
-// printVersion prints the nuclei version and exits.
+// printVersion prints the vulnsight version and exits.
 func printVersion() {
-	options.Logger.Info().Msgf("Nuclei Engine Version: %s", config.Version)
-	options.Logger.Info().Msgf("Nuclei Config Directory: %s", config.DefaultConfig.GetConfigDir())
-	options.Logger.Info().Msgf("Nuclei Cache Directory: %s", config.DefaultConfig.GetCacheDir()) // cache dir contains resume files
+	options.Logger.Info().Msgf("Vulnsight Engine Version: %s", config.Version)
+	options.Logger.Info().Msgf("Vulnsight Config Directory: %s", config.DefaultConfig.GetConfigDir())
+	options.Logger.Info().Msgf("Vulnsight Cache Directory: %s", config.DefaultConfig.GetCacheDir()) // cache dir contains resume files
 	options.Logger.Info().Msgf("PDCP Directory: %s", pdcp.PDCPDir)
 	os.Exit(0)
 }
 
-// printTemplateVersion prints the nuclei template version and exits.
+// printTemplateVersion prints the vulnsight template version and exits.
 func printTemplateVersion() {
 	cfg := config.DefaultConfig
 	options.Logger.Info().Msgf("Public nuclei-templates version: %s (%s)\n", cfg.TemplateVersion, cfg.TemplatesDirectory)
@@ -801,7 +801,7 @@ func printTemplateVersion() {
 
 func resetCallback() {
 	warning := fmt.Sprintf(`
-Using '-reset' will delete all nuclei configurations files and all nuclei-templates
+Using '-reset' will delete all vulnsight configurations files and all nuclei-templates
 
 Following files will be deleted:
 1. All config files at %v
@@ -840,7 +840,7 @@ Note: Make sure you have backup of your custom nuclei-templates before proceedin
 	if err != nil {
 		options.Logger.Fatal().Msgf("could not delete templates dir: %s", err)
 	}
-	options.Logger.Info().Msgf("Successfully deleted all nuclei configurations files and nuclei-templates")
+	options.Logger.Info().Msgf("Successfully deleted all vulnsight configurations files and nuclei-templates")
 	os.Exit(0)
 }
 
@@ -871,7 +871,7 @@ type profileSecrets struct {
 }
 
 // processInlineSecretsFromProfile parses the profile YAML file for inline secrets
-// and creates a temporary secrets file compatible with nuclei's auth provider.
+// and creates a temporary secrets file compatible with vulnsight's auth provider.
 // Returns the path to the temp file or empty string if no secrets found.
 func processInlineSecretsFromProfile(profilePath string, options *types.Options) (string, error) {
 	data, err := os.ReadFile(profilePath)

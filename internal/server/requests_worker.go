@@ -4,8 +4,8 @@ import (
 	"path"
 
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/internal/server/scope"
-	"github.com/projectdiscovery/nuclei/v3/pkg/input/types"
+	"github.com/projectdiscovery/vulnsight/v3/internal/server/scope"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/input/types"
 )
 
 func (s *DASTServer) consumeTaskRequest(req PostRequestsHandlerRequest) {

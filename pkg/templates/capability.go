@@ -3,7 +3,7 @@ package templates
 import (
 	"fmt"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
 )
 
 // Capability identifies an opt-in capability a template may require.

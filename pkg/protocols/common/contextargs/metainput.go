@@ -8,8 +8,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/input/types"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/input/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
 	urlutil "github.com/projectdiscovery/utils/url"
 	"github.com/segmentio/ksuid"
 )

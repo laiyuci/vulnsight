@@ -3,9 +3,9 @@ package utils
 import (
 	"path/filepath"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/config"
-	"github.com/projectdiscovery/nuclei/v3/pkg/keys"
-	filepathutil "github.com/projectdiscovery/nuclei/v3/pkg/utils/filepath"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/config"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/keys"
+	filepathutil "github.com/projectdiscovery/vulnsight/v3/pkg/utils/filepath"
 )
 
 const (

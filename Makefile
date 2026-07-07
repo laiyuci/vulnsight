@@ -37,20 +37,20 @@ go-build:
 		 -o '${GOBUILD_OUTPUT}${GOBUILD_OUTPUT_EXT}' $(GOBUILD_PACKAGES)
 
 build: GOFLAGS = -pgo=auto
-build: GOBUILD_OUTPUT = ./bin/nuclei
-build: GOBUILD_PACKAGES = cmd/nuclei/main.go
+build: GOBUILD_OUTPUT = ./bin/vulnsight
+build: GOBUILD_PACKAGES = cmd/vulnsight/vulnsight.go
 build: go-build
 
 build-test: GOFLAGS = -v -pgo=auto
-build-test: GOBUILD_OUTPUT = ./bin/nuclei.test
-build-test: GOBUILD_PACKAGES = ./cmd/nuclei/
+build-test: GOBUILD_OUTPUT = ./bin/vulnsight.test
+build-test: GOBUILD_PACKAGES = ./cmd/vulnsight/
 build-test: clean
 build-test:
 	CGO_ENABLED=0 $(GOCMD) test -c -trimpath $(GOFLAGS) -ldflags '${LDFLAGS}' $(GOBUILD_ADDITIONAL_ARGS) \
 		 -o '${GOBUILD_OUTPUT}${GOBUILD_OUTPUT_EXT}' ${GOBUILD_PACKAGES}
 
-build-stats: GOBUILD_OUTPUT = ./bin/nuclei-stats
-build-stats: GOBUILD_PACKAGES = cmd/nuclei/main.go
+build-stats: GOBUILD_OUTPUT = ./bin/vulnsight-stats
+build-stats: GOBUILD_PACKAGES = cmd/vulnsight/vulnsight.go
 build-stats: GOBUILD_ADDITIONAL_ARGS = -tags=stats
 build-stats: go-build
 
@@ -76,11 +76,11 @@ docgen:
 
 docs: docgen
 docs:
-	./bin/docgen docs.md nuclei-jsonschema.json
+	./bin/docgen docs.md vulnsight-jsonschema.json
 
 syntax-docs: docgen
 syntax-docs:
-	./bin/docgen SYNTAX-REFERENCE.md nuclei-jsonschema.json
+	./bin/docgen SYNTAX-REFERENCE.md vulnsight-jsonschema.json
 
 # RACE controls the data-race detector (on by default for local runs). CI builds
 # the race variant on a single OS and passes RACE= elsewhere, since data races are
@@ -103,12 +103,12 @@ regression:
 	$(GOTEST) -tags=regression -timeout 30m ./lib/tests -run TestScaleRegression -v
 
 functional: build
-	@release_binary="$$(command -v nuclei.exe 2>/dev/null || command -v nuclei 2>/dev/null)"; \
+	@release_binary="$$(command -v vulnsight.exe 2>/dev/null || command -v vulnsight 2>/dev/null)"; \
 	if [ -z "$$release_binary" ]; then \
-		echo "release nuclei binary not found on PATH"; \
+		echo "release vulnsight binary not found on PATH"; \
 		exit 1; \
 	fi; \
-	RELEASE_BINARY="$$release_binary" DEV_BINARY="$(PWD)/bin/nuclei" \
+	RELEASE_BINARY="$$release_binary" DEV_BINARY="$(PWD)/bin/vulnsight" \
 		$(GOTEST) -tags=functional -timeout 1h ./internal/tests/functional
 
 tidy:
@@ -286,15 +286,15 @@ dsl-docs:
 
 template-validate: build
 template-validate:
-	./bin/nuclei -ut
-	./bin/nuclei -validate \
+	./bin/vulnsight -ut
+	./bin/vulnsight -validate \
 		-et http/technologies \
 		-t dns \
 		-t ssl \
 		-t network \
 		-t http/exposures \
 		-ept code
-	./bin/nuclei -validate \
+	./bin/vulnsight -validate \
 		-w workflows \
 		-et http/technologies \
 		-ept code

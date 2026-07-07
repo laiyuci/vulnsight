@@ -7,7 +7,7 @@ import (
 	"sync/atomic"
 
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/portutil"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/portutil"
 	mapsutil "github.com/projectdiscovery/utils/maps"
 	sliceutil "github.com/projectdiscovery/utils/slice"
 	stringsutil "github.com/projectdiscovery/utils/strings"

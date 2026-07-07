@@ -69,7 +69,7 @@ jobs:
           PDCP_API_KEY: "${{ secrets.PDCP_API_KEY }}"
       - run: go run -race . -l ${{ github.workspace }}/internal/tests/functional/testdata/targets.txt -id tech-detect,tls-version
         if: ${{ matrix.os != 'windows-latest' }} # known issue: https://github.com/golang/go/issues/46099
-        working-directory: cmd/nuclei/
+        working-directory: cmd/vulnsight/
       # Hermetic HTTP-engine scale regression: stands up many loopback hosts and
       # asserts finding parity across a diverse template set (per-host pool,
       # connection-reuse and http->https tracker + cookie-reuse). Race

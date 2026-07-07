@@ -7,8 +7,8 @@ import (
 	"testing"
 
 	upstream "github.com/FalconOpsLLC/goexec/pkg/goexec"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolstate"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolstate"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
 )
 
 func TestRunRedactsRunnerErrors(t *testing.T) {

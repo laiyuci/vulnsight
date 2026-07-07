@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/invopop/jsonschema"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils/json"
 )
 
 // DNSRequestType is the type of the method specified

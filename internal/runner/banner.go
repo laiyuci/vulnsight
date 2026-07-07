@@ -5,17 +5,17 @@ import (
 	"fmt"
 
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/config"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/config"
 	pdcpauth "github.com/projectdiscovery/utils/auth/pdcp"
 	updateutils "github.com/projectdiscovery/utils/update"
 )
 
 var banner = fmt.Sprintf(`
-                     __     _
-   ____  __  _______/ /__  (_)
-  / __ \/ / / / ___/ / _ \/ /
- / / / / /_/ / /__/ /  __/ /
-/_/ /_/\__,_/\___/_/\___/_/   %s
+ _   __     __         _       __    __
+| | / /_ __/ /__  ___ (_)__ _ / /_  / /_
+| |/ / // / / _ \(_-</ / _ '// _ \/ __/
+|___/\_,_/_/_//_/___/_/\_, //_//_/\__/  %s
+                      /___/
 `, config.Version)
 
 // showBanner is used to show the banner to the user
@@ -24,7 +24,7 @@ func showBanner() {
 	gologger.Print().Msgf("\t\tprojectdiscovery.io\n\n")
 }
 
-// NucleiToolUpdateCallback updates nuclei binary/tool to latest version
+// NucleiToolUpdateCallback updates vulnsight binary/tool to latest version
 func NucleiToolUpdateCallback() {
 	showBanner()
 	updateutils.GetUpdateToolCallback(config.BinaryName, config.Version)()

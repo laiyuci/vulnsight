@@ -113,7 +113,7 @@ Nuclei の完全な[**`ドキュメントはこちら`**](https://docs.projectdi
 `nuclei` のインストールには **go >= 1.24.2** が必要です。以下のコマンドを実行してリポジトリを取得してください:
 
 ```sh
-go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+go install -v github.com/projectdiscovery/vulnsight/v3/cmd/vulnsight@latest
 ```
 
 nuclei のインストールについて詳しくは `https://docs.projectdiscovery.io/tools/nuclei/install` を参照してください。

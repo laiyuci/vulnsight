@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/model/types/severity"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model/types/severity"
 	"github.com/stretchr/testify/require"
 )
 

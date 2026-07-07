@@ -1,10 +1,10 @@
 package rdp
 
 import (
-	lib_rdp "github.com/projectdiscovery/nuclei/v3/pkg/js/libs/rdp"
+	lib_rdp "github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/rdp"
 
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/gojs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/gojs"
 )
 
 var (

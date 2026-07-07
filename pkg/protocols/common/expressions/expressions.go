@@ -6,10 +6,10 @@ import (
 
 	"github.com/projectdiscovery/govaluate"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators/common/dsl"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/marker"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/replacer"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators/common/dsl"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/marker"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/replacer"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
 	stringsutil "github.com/projectdiscovery/utils/strings"
 )
 

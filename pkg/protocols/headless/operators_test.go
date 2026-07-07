@@ -3,8 +3,8 @@ package headless
 import (
 	"testing"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators/extractors"
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators/matchers"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators/extractors"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators/matchers"
 	"github.com/stretchr/testify/require"
 )
 

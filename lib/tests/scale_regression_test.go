@@ -28,8 +28,8 @@ import (
 	"sync"
 	"testing"
 
-	nuclei "github.com/projectdiscovery/nuclei/v3/lib"
-	"github.com/projectdiscovery/nuclei/v3/pkg/output"
+	nuclei "github.com/projectdiscovery/vulnsight/v3/lib"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/output"
 	"github.com/stretchr/testify/require"
 )
 

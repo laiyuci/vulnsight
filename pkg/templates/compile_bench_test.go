@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates"
 )
 
 func BenchmarkParse(b *testing.B) {

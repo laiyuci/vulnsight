@@ -6,7 +6,7 @@ package integration_test
 import (
 	"fmt"
 
-	"github.com/projectdiscovery/nuclei/v3/internal/tests/testutils"
+	"github.com/projectdiscovery/vulnsight/v3/internal/tests/testutils"
 )
 
 var offlineHttpTestcases = []integrationCase{

@@ -113,7 +113,7 @@ Browse the full Nuclei [**`documentation here`**](https://docs.projectdiscovery.
 `nuclei` requires **go >= 1.24.2** to install successfully. Run the following command to get the repo:
 
 ```sh
-go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+go install -v github.com/projectdiscovery/vulnsight/v3/cmd/vulnsight@latest
 ```
 
 To learn more about installing nuclei, see `https://docs.projectdiscovery.io/tools/nuclei/install`.

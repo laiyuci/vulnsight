@@ -6,7 +6,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/config"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/config"
 )
 
 func TestGetValidAbsPathAllowsExpectedHelperPaths(t *testing.T) {

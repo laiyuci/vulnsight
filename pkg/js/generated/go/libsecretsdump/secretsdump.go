@@ -1,10 +1,10 @@
 package secretsdump
 
 import (
-	lib_secretsdump "github.com/projectdiscovery/nuclei/v3/pkg/js/libs/secretsdump"
+	lib_secretsdump "github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/secretsdump"
 
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/gojs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/gojs"
 )
 
 var (

@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
-	"github.com/projectdiscovery/nuclei/v3/pkg/input/formats"
-	"github.com/projectdiscovery/nuclei/v3/pkg/input/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/input/formats"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/input/types"
 	"github.com/projectdiscovery/utils/conversion"
 	burpxml "github.com/projectdiscovery/utils/parsers/burp/xml"
 )

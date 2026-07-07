@@ -1,10 +1,10 @@
 package dcom
 
 import (
-	lib_dcom "github.com/projectdiscovery/nuclei/v3/pkg/js/libs/dcom"
+	lib_dcom "github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/dcom"
 
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/gojs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/gojs"
 )
 
 var (

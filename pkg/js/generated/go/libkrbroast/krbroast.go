@@ -1,10 +1,10 @@
 package krbroast
 
 import (
-	lib_krbroast "github.com/projectdiscovery/nuclei/v3/pkg/js/libs/krbroast"
+	lib_krbroast "github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/krbroast"
 
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/gojs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/gojs"
 )
 
 var (

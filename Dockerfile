@@ -11,6 +11,6 @@ RUN make build
 FROM alpine:latest
 
 RUN apk add --no-cache bind-tools chromium ca-certificates
-COPY --from=builder /app/bin/nuclei /usr/local/bin/
+COPY --from=builder /app/bin/vulnsight /usr/local/bin/
 
-ENTRYPOINT ["nuclei"]
+ENTRYPOINT ["vulnsight"]

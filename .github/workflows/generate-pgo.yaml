@@ -12,7 +12,7 @@ jobs:
       contents: write
     env:
       GITHUB_TOKEN: "${{ github.token }}"
-      PGO_FILE: "cmd/nuclei/default.pgo"
+      PGO_FILE: "cmd/vulnsight/default.pgo"
       TARGET: "https://honey.scanme.sh"
       TARGET_COUNT: "100"
       TARGET_LIST: "/tmp/targets.txt"

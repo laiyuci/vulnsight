@@ -5,7 +5,7 @@ import (
 	"reflect"
 
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
 )
 
 // Dedupe is a javascript builtin for deduping values

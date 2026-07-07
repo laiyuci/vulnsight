@@ -4,14 +4,14 @@ import (
 	"testing"
 
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/config"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/disk"
-	"github.com/projectdiscovery/nuclei/v3/pkg/catalog/loader"
-	"github.com/projectdiscovery/nuclei/v3/pkg/loader/workflow"
-	"github.com/projectdiscovery/nuclei/v3/pkg/model/types/severity"
-	"github.com/projectdiscovery/nuclei/v3/pkg/templates"
-	templateTypes "github.com/projectdiscovery/nuclei/v3/pkg/templates/types"
-	"github.com/projectdiscovery/nuclei/v3/internal/tests/testutils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/config"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/disk"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/catalog/loader"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/loader/workflow"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model/types/severity"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/templates"
+	templateTypes "github.com/projectdiscovery/vulnsight/v3/pkg/templates/types"
+	"github.com/projectdiscovery/vulnsight/v3/internal/tests/testutils"
 )
 
 func BenchmarkStoreValidateTemplates(b *testing.B) {

@@ -9,9 +9,9 @@ import (
 	"github.com/projectdiscovery/govaluate"
 
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/nuclei/v3/pkg/operators/common/dsl"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/expressions"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/render"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/operators/common/dsl"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/expressions"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/render"
 	stringsutil "github.com/projectdiscovery/utils/strings"
 )
 

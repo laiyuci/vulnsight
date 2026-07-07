@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils"
 )
 
 func BenchmarkVariableEvaluate(b *testing.B) {

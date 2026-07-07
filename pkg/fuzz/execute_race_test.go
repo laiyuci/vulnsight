@@ -4,8 +4,8 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/interactsh"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/interactsh"
 	"github.com/stretchr/testify/require"
 )
 

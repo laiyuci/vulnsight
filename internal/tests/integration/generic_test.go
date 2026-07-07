@@ -13,7 +13,7 @@ import (
 
 	"github.com/julienschmidt/httprouter"
 
-	"github.com/projectdiscovery/nuclei/v3/internal/tests/testutils"
+	"github.com/projectdiscovery/vulnsight/v3/internal/tests/testutils"
 	permissionutil "github.com/projectdiscovery/utils/permission"
 )
 

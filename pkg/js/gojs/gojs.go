@@ -8,7 +8,7 @@ import (
 
 	"github.com/projectdiscovery/goja"
 	"github.com/projectdiscovery/goja_nodejs/require"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/utils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/utils"
 )
 
 type Objects map[string]interface{}

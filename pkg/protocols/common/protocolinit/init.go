@@ -1,13 +1,13 @@
 package protocolinit
 
 import (
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/compiler"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolstate"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/dns/dnsclientpool"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/http/signerpool"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/network/networkclientpool"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/whois/rdapclientpool"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/compiler"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolstate"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/dns/dnsclientpool"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/http/signerpool"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/network/networkclientpool"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/whois/rdapclientpool"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
 	_ "github.com/projectdiscovery/utils/global"
 )
 

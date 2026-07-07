@@ -1,10 +1,10 @@
 package redis
 
 import (
-	lib_redis "github.com/projectdiscovery/nuclei/v3/pkg/js/libs/redis"
+	lib_redis "github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/redis"
 
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/gojs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/gojs"
 )
 
 var (

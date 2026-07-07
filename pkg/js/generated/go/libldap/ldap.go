@@ -1,10 +1,10 @@
 package ldap
 
 import (
-	lib_ldap "github.com/projectdiscovery/nuclei/v3/pkg/js/libs/ldap"
+	lib_ldap "github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/ldap"
 
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/gojs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/gojs"
 )
 
 var (

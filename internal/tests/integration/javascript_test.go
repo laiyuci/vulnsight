@@ -15,7 +15,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/ory/dockertest/v3"
 	dc "github.com/ory/dockertest/v3/docker"
-	"github.com/projectdiscovery/nuclei/v3/internal/tests/testutils"
+	"github.com/projectdiscovery/vulnsight/v3/internal/tests/testutils"
 	osutils "github.com/projectdiscovery/utils/os"
 	"github.com/projectdiscovery/utils/reader"
 	"go.uber.org/multierr"

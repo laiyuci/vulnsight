@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/ory/dockertest/v3"
-	"github.com/projectdiscovery/nuclei/v3/pkg/output"
-	"github.com/projectdiscovery/nuclei/v3/pkg/reporting/exporters/mongo"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/output"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/reporting/exporters/mongo"
 	osutil "github.com/projectdiscovery/utils/os"
 	mongoclient "go.mongodb.org/mongo-driver/mongo"
 	mongooptions "go.mongodb.org/mongo-driver/mongo/options"

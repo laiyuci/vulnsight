@@ -1,10 +1,10 @@
 package tsch
 
 import (
-	lib_tsch "github.com/projectdiscovery/nuclei/v3/pkg/js/libs/tsch"
+	lib_tsch "github.com/projectdiscovery/vulnsight/v3/pkg/js/libs/tsch"
 
 	"github.com/projectdiscovery/goja"
-	"github.com/projectdiscovery/nuclei/v3/pkg/js/gojs"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/js/gojs"
 )
 
 var (

@@ -13,8 +13,8 @@ import (
 
 	"github.com/projectdiscovery/gologger"
 	"github.com/projectdiscovery/gologger/levels"
-	"github.com/projectdiscovery/nuclei/v3/internal/runner"
-	"github.com/projectdiscovery/nuclei/v3/pkg/types"
+	"github.com/projectdiscovery/vulnsight/v3/internal/runner"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/types"
 )
 
 var (
@@ -189,7 +189,7 @@ func BenchmarkRunEnumeration(b *testing.B) {
 	b.Run("Multiproto", func(b *testing.B) {
 		options := getDefaultOptions()
 		options.Targets = []string{targetURL}
-		options.Templates = []string{"./cmd/nuclei/testdata/benchmark/multiproto/"}
+		options.Templates = []string{"./cmd/vulnsight/testdata/benchmark/multiproto/"}
 
 		runEnumBenchmark(b, options)
 	})

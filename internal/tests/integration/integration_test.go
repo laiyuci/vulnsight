@@ -16,8 +16,8 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/projectdiscovery/nuclei/v3/internal/fuzzplayground"
-	"github.com/projectdiscovery/nuclei/v3/internal/tests/testutils"
+	"github.com/projectdiscovery/vulnsight/v3/internal/fuzzplayground"
+	"github.com/projectdiscovery/vulnsight/v3/internal/tests/testutils"
 )
 
 type integrationHarness struct {
@@ -100,7 +100,7 @@ func TestMain(m *testing.M) {
 }
 
 func buildNucleiBinary(repoRoot, binaryPath string) error {
-	cmd := exec.Command("go", "build", "-o", binaryPath, "./cmd/nuclei")
+	cmd := exec.Command("go", "build", "-o", binaryPath, "./cmd/vulnsight")
 	cmd.Dir = repoRoot
 	output, err := cmd.CombinedOutput()
 	if err != nil {

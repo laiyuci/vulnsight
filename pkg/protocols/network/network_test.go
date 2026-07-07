@@ -5,12 +5,12 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/projectdiscovery/nuclei/v3/internal/tests/testutils"
-	"github.com/projectdiscovery/nuclei/v3/pkg/model"
-	"github.com/projectdiscovery/nuclei/v3/pkg/model/types/severity"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/portutil"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/variables"
-	"github.com/projectdiscovery/nuclei/v3/pkg/utils"
+	"github.com/projectdiscovery/vulnsight/v3/internal/tests/testutils"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/model/types/severity"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/portutil"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/variables"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/utils"
 )
 
 func TestResolvePort(t *testing.T) {

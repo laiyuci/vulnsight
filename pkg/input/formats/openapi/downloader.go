@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"github.com/projectdiscovery/nuclei/v3/pkg/input/formats"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/input/formats"
 	"github.com/projectdiscovery/retryablehttp-go"
 )
 

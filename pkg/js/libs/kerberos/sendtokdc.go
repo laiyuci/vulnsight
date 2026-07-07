@@ -14,7 +14,7 @@ import (
 	"time"
 
 	"github.com/jcmturner/gokrb5/v8/messages"
-	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/protocolstate"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/protocols/common/protocolstate"
 )
 
 // sendtokdc.go deals with actual sending and receiving responses from KDC

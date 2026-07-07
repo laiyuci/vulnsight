@@ -12,7 +12,7 @@ import (
 	"sync/atomic"
 
 	"github.com/logrusorgru/aurora/v4"
-	"github.com/projectdiscovery/nuclei/v3/pkg/output/stats/waf"
+	"github.com/projectdiscovery/vulnsight/v3/pkg/output/stats/waf"
 	mapsutil "github.com/projectdiscovery/utils/maps"
 )
 
